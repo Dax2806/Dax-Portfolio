@@ -1,47 +1,64 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Web applications and shipped frontend work by Daksh Patadia." />
-  <title>Web applications · Daksh Patadia</title>
-  <link rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d1b2a'/%3E%3Cpath d='M18 18h12c10.5 0 16 5.8 16 14 0 8.5-5.5 14-16 14H18V18Zm10.8 22c5.9 0 9.5-3 9.5-8s-3.6-8-9.5-8h-3.2v16h3.2Z' fill='%23f6bd60'/%3E%3C/svg%3E" />
+  <title>Web Applications · Daksh Patadia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
-
 <body>
-  <div class="site-shell">
-    <div class="page-glow page-glow-left" aria-hidden="true"></div>
-    <div class="page-glow page-glow-right" aria-hidden="true"></div>
-    <div class="grid-overlay" aria-hidden="true"></div>
-    <div class="fx-aurora" aria-hidden="true"></div>
-    <div class="fx-noise" aria-hidden="true"></div>
-    <div class="fx-spotlight" aria-hidden="true"></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
 
-    <header class="topbar topbar-sub">
-      <a class="brand" href="./index.html#home" aria-label="Back to portfolio home">
-        <span class="brand-mark">DP</span>
-        <span class="brand-name">Daksh Patadia</span>
-      </a>
-      <nav class="nav-sub" aria-label="Subpage">
-        <a href="./index.html#projects">All projects</a>
+  <header class="nav scrolled" id="nav">
+    <a href="./index.html" class="nav-logo">DP</a>
+    <button class="nav-burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="./index.html#about">About</a>
+      <a href="./index.html#experience">Experience</a>
+      <a href="./index.html#projects">← All Projects</a>
+      <a href="./index.html#contact">Contact</a>
+      <a href="./Daksh-Patadia-Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a>
+    </nav>
+  </header>
 
-      </nav>
-    </header>
-
-    <main class="section subpage-main">
-      <div class="section-heading" data-reveal>
-        <h2>Web Applications</h2>
+  <main>
+    <section class="subpage-hero">
+      <div class="subpage-hero-inner">
+        <a href="./index.html#projects" class="back-link mono">← Back to projects</a>
+        <p class="section-label mono">[ Web Applications ]</p>
+        <h1 class="subpage-title">Shipped<br><em>Work</em></h1>
+        <p class="subpage-desc">Live demos, GitHub links, and short case studies for each app I've built or contributed to. More coming soon.</p>
       </div>
-      <p class="subpage-lead" data-reveal>
-        Replace this placeholder with live demos, GitHub links, and short case studies for each app you have built or
-        contributed to.
-      </p>
-    </main>
-  </div>
-  <script defer src="/script.js"></script>
-</body>
+    </section>
+    <section class="section subpage-content">
+      <div class="empty-state">
+        <span class="wip-dot"></span>
+        <span class="mono">Projects being added — check back soon</span>
+      </div>
+    </section>
+  </main>
 
+  <footer class="footer">
+    <span class="mono">© 2025 Daksh Patadia</span>
+    <span class="mono">Anand, Gujarat, India</span>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    const dot = document.getElementById('cursorDot');
+    let mx=0,my=0,cx=0,cy=0;
+    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px)`;});
+    function animCursor(){cx+=(mx-cx)*0.14;cy+=(my-cy)*0.14;cursor.style.transform=`translate(${cx}px,${cy}px)`;requestAnimationFrame(animCursor);}
+    animCursor();
+    document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>cursor.classList.remove('cursor-hover'));});
+    const burger=document.getElementById('burger');
+    const navLinks=document.getElementById('navLinks');
+    burger.addEventListener('click',()=>{navLinks.classList.toggle('open');burger.classList.toggle('open');});
+  </script>
+</body>
 </html>
