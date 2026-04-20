@@ -3,247 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Daksh Patadia — Web Developer, UI/UX Designer, Technical Writer." />
-  <title>Daksh Patadia</title>
+  <meta name="description" content="UI and UX design work by Daksh Patadia." />
+  <title>UI / UX · Daksh Patadia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-
   <div class="cursor" id="cursor"></div>
   <div class="cursor-dot" id="cursorDot"></div>
 
-  <header class="nav" id="nav">
-    <a href="#home" class="nav-logo">
-      <span class="nav-logo-mark">DP</span>
-    </a>
-    <button class="nav-burger" id="burger" aria-label="Toggle menu">
-      <span></span><span></span>
-    </button>
+  <header class="nav scrolled" id="nav">
+    <a href="./index.html" class="nav-logo">DP</a>
+    <button class="nav-burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
     <nav class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+      <a href="./index.html#about">About</a>
+      <a href="./index.html#experience">Experience</a>
+      <a href="./index.html#projects">← All Projects</a>
+      <a href="./index.html#contact">Contact</a>
       <a href="./Daksh-Patadia-Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a>
     </nav>
   </header>
 
   <main>
-
-    <section class="hero" id="home">
-      <div class="hero-noise"></div>
-      <div class="hero-grid"></div>
-      <div class="hero-content">
-        <p class="hero-tag mono">[ Currently open to work ]</p>
-        <h1 class="hero-title">
-          <span class="hero-title-line" data-text="DAKSH">DAKSH</span>
-          <span class="hero-title-line accent" data-text="PATADIA">PATADIA</span>
-        </h1>
-        <div class="hero-roles">
-          <span>Web Developer</span>
-          <span class="divider">/</span>
-          <span>UI · UX Designer</span>
-          <span class="divider">/</span>
-          <span>Technical Writer</span>
-        </div>
-        <p class="hero-desc">
-          Undergraduate Computer Engineer building digital experiences where structural integrity meets intuitive design. Based in Gujarat, India.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn-primary">View Work</a>
-          <a href="#contact" class="btn-ghost">Get in Touch</a>
-        </div>
-      </div>
-      <div class="hero-scroll-hint">
-        <span class="mono">scroll</span>
-        <div class="scroll-line"></div>
+    <section class="subpage-hero">
+      <div class="subpage-hero-inner">
+        <a href="./index.html#projects" class="back-link mono">← Back to projects</a>
+        <p class="section-label mono">[ UI / UX Design ]</p>
+        <h1 class="subpage-title">Design<br><em>Work</em></h1>
+        <p class="subpage-desc">Figma flows, wireframes, before-and-after explorations, and notes on research and iteration.</p>
       </div>
     </section>
-
-    <div class="marquee-strip" aria-hidden="true">
-      <div class="marquee-track">
-        <span>HTML</span><span class="sep">·</span>
-        <span>CSS</span><span class="sep">·</span>
-        <span>JavaScript</span><span class="sep">·</span>
-        <span>Figma</span><span class="sep">·</span>
-        <span>Python</span><span class="sep">·</span>
-        <span>C++</span><span class="sep">·</span>
-        <span>MySQL</span><span class="sep">·</span>
-        <span>GitHub</span><span class="sep">·</span>
-        <span>UI/UX</span><span class="sep">·</span>
-        <span>Bootstrap</span><span class="sep">·</span>
-        <span>HTML</span><span class="sep">·</span>
-        <span>CSS</span><span class="sep">·</span>
-        <span>JavaScript</span><span class="sep">·</span>
-        <span>Figma</span><span class="sep">·</span>
-        <span>Python</span><span class="sep">·</span>
-        <span>C++</span><span class="sep">·</span>
-        <span>MySQL</span><span class="sep">·</span>
-        <span>GitHub</span><span class="sep">·</span>
-        <span>UI/UX</span><span class="sep">·</span>
-        <span>Bootstrap</span><span class="sep">·</span>
-      </div>
-    </div>
-
-    <section class="section" id="about">
-      <div class="section-label mono">[ 01 — About ]</div>
-      <div class="about-layout">
-        <div class="about-text">
-          <h2 class="section-title">Who I Am &amp;<br><em>How I Build</em></h2>
-          <p>Computer Engineer driven by the intersection of rigorous logic and human-centric design. I specialize in translating complex ideas into clean, functional interfaces using HTML, CSS, and JavaScript.</p>
-          <p>Beyond code, I'm a dedicated Technical Writer — leading documentation teams for university journals and sports clubs has sharpened my ability to synthesize technical data into clear, accessible narratives.</p>
-          <a href="./Daksh-Patadia-Resume.pdf" target="_blank" class="btn-outline">Download Resume ↗</a>
-        </div>
-        <div class="about-stats">
-          <div class="stat-card will-reveal">
-            <span class="stat-num">B.Tech</span>
-            <span class="stat-label mono">Computer Engineering</span>
-            <span class="stat-sub">G.H. Patel College of Engineering &amp; Technology</span>
-          </div>
-          <div class="stat-card will-reveal">
-            <span class="stat-num">2027</span>
-            <span class="stat-label mono">Expected Graduation</span>
-            <span class="stat-sub">CGPA: 7.47</span>
-          </div>
-          <div class="stat-card will-reveal">
-            <span class="stat-num">UI</span>
-            <span class="stat-label mono">Core Strength</span>
-            <span class="stat-sub">Frontend Execution &amp; Interface Design</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="section-label mono will-reveal">[ 02 — Experience ]</div>
-      <h2 class="section-title will-reveal">Roles That Shaped<br><em>How I Build</em></h2>
-      <div class="exp-list">
-        <div class="exp-card will-reveal">
-          <div class="exp-left">
-            <span class="exp-period mono">May – Jun 2025</span>
-            <span class="exp-location mono">Rajkot, Gujarat</span>
-          </div>
-          <div class="exp-right">
-            <div class="exp-header">
-              <p class="exp-company">TechnoComet IT Solutions</p>
-              <h3 class="exp-role">Web Developer Intern</h3>
-            </div>
-            <p class="exp-summary">Worked on client-facing web interfaces, balancing implementation quality with fast-moving stakeholder communication.</p>
-            <ul class="exp-points">
-              <li>Developed responsive user interfaces for client websites using HTML, CSS, and JavaScript.</li>
-              <li>Worked directly with clients to understand requirements, present progress, and refine deliverables through feedback.</li>
-              <li>Translated technical decisions into clear communication for non-technical stakeholders.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-label mono will-reveal">[ 03 — Projects ]</div>
-      <h2 class="section-title will-reveal">Selected<br><em>Work</em></h2>
-      <div class="project-cats">
-        <a href="./web-applications.html" class="project-cat-card will-reveal">
-          <span class="cat-num mono">01</span>
-          <h3>Web Applications</h3>
-          <p>Shipped frontend work and full-stack experiments</p>
-          <span class="cat-arrow">→</span>
-        </a>
-        <a href="./ui-ux.html" class="project-cat-card will-reveal">
-          <span class="cat-num mono">02</span>
-          <h3>UI / UX Designs</h3>
-          <p>Figma flows, wireframes, and design research</p>
-          <span class="cat-arrow">→</span>
-        </a>
-        <a href="./blogs.html" class="project-cat-card will-reveal">
-          <span class="cat-num mono">03</span>
-          <h3>Blogs &amp; Writing</h3>
-          <p>Technical articles, LinkedIn posts, documentation</p>
-          <span class="cat-arrow">→</span>
-        </a>
-      </div>
-      <div class="project-wip">
+    <section class="section subpage-content">
+      <div class="empty-state">
         <span class="wip-dot"></span>
-        <span class="mono">Projects loading — check back soon</span>
+        <span class="mono">Designs being added — check back soon</span>
       </div>
     </section>
-
-    <section class="section" id="skills">
-      <div class="section-label mono will-reveal">[ 04 — Skills ]</div>
-      <h2 class="section-title will-reveal">Tools &amp;<br><em>Technologies</em></h2>
-      <div class="skills-layout">
-        <div class="skill-group will-reveal">
-          <div class="skill-group-header">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            <span class="mono">Languages</span>
-          </div>
-          <div class="skill-tags">
-            <span>C++</span><span>Python</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Bootstrap</span>
-          </div>
-        </div>
-        <div class="skill-group will-reveal">
-          <div class="skill-group-header">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/></svg>
-            <span class="mono">Tools</span>
-          </div>
-          <div class="skill-tags">
-            <span>GitHub</span><span>MySQL</span><span>Figma</span><span>VS Code</span><span>CodeBlocks</span>
-          </div>
-        </div>
-        <div class="skill-group will-reveal">
-          <div class="skill-group-header">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            <span class="mono">Working Style</span>
-          </div>
-          <div class="skill-tags">
-            <span>Documentation</span><span>Project Management</span><span>Adaptability</span><span>Attention to Detail</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact-section" id="contact">
-      <div class="section-label mono will-reveal">[ 05 — Contact ]</div>
-      <h2 class="section-title will-reveal">Let's Build<br><em>Something</em></h2>
-      <p class="contact-sub">Open to freelancing, contract work, and internship opportunities.</p>
-      <div class="contact-grid">
-        <a href="mailto:daxpat28@gmail.com" class="contact-item will-reveal">
-          <span class="contact-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          </span>
-          <div>
-            <p class="mono contact-type">Email</p>
-            <p class="contact-val">daxpat28@gmail.com</p>
-          </div>
-          <span class="contact-arrow">↗</span>
-        </a>
-        <a href="tel:+919773495577" class="contact-item will-reveal">
-          <span class="contact-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </span>
-          <div>
-            <p class="mono contact-type">Mobile</p>
-            <p class="contact-val">+91 9773495577</p>
-          </div>
-          <span class="contact-arrow">↗</span>
-        </a>
-        <a href="https://www.linkedin.com/in/daxpatadia28" target="_blank" rel="noopener noreferrer" class="contact-item will-reveal">
-          <span class="contact-icon linkedin">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </span>
-          <div>
-            <p class="mono contact-type">LinkedIn</p>
-            <p class="contact-val">daxpatadia28</p>
-          </div>
-          <span class="contact-arrow">↗</span>
-        </a>
-      </div>
-    </section>
-
   </main>
 
   <footer class="footer">
@@ -252,50 +49,16 @@
   </footer>
 
   <script>
-    // Custom cursor
     const cursor = document.getElementById('cursor');
     const dot = document.getElementById('cursorDot');
-    let mx = 0, my = 0, cx = 0, cy = 0;
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.transform = `translate(${mx}px,${my}px)`;
-    });
-    function animCursor() {
-      cx += (mx - cx) * 0.14;
-      cy += (my - cy) * 0.14;
-      cursor.style.transform = `translate(${cx}px,${cy}px)`;
-      requestAnimationFrame(animCursor);
-    }
+    let mx=0,my=0,cx=0,cy=0;
+    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px)`;});
+    function animCursor(){cx+=(mx-cx)*0.14;cy+=(my-cy)*0.14;cursor.style.transform=`translate(${cx}px,${cy}px)`;requestAnimationFrame(animCursor);}
     animCursor();
-    document.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
-    });
-
-    // Nav scroll
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
-
-    // Mobile nav
-    const burger = document.getElementById('burger');
-    const navLinks = document.getElementById('navLinks');
-    burger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      burger.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      burger.classList.remove('open');
-    }));
-
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.will-reveal');
-    const ro = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('revealed'); ro.unobserve(e.target); }
-      });
-    }, { threshold: 0.08 });
-    reveals.forEach(el => ro.observe(el));
+    document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>cursor.classList.remove('cursor-hover'));});
+    const burger=document.getElementById('burger');
+    const navLinks=document.getElementById('navLinks');
+    burger.addEventListener('click',()=>{navLinks.classList.toggle('open');burger.classList.toggle('open');});
   </script>
 </body>
 </html>
