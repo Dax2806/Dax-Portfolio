@@ -176,6 +176,90 @@ ul { list-style: none; }
   max-width: var(--max);
   margin: 0 auto;
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-left { display: flex; flex-direction: column; }
+
+/* ── TERMINAL CARD ── */
+.hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terminal-card {
+  width: 100%;
+  max-width: 440px;
+  background: #0f0f0f;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(200,255,0,0.06);
+  animation: floatCard 5s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #1a1a1a;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.t-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.t-red    { background: #ff5f57; }
+.t-yellow { background: #febc2e; }
+.t-green  { background: #28c840; }
+
+.t-title {
+  margin-left: 0.5rem;
+  color: #555;
+  font-size: 0.78rem;
+}
+
+.terminal-body {
+  padding: 1.2rem 1.4rem 1.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.75;
+}
+
+.t-line       { display: block; }
+.t-indent     { padding-left: 1.4rem; }
+.t-indent2    { padding-left: 2.8rem; }
+.t-gap        { margin-top: 0.6rem; }
+.t-cursor-line { margin-top: 0.2rem; }
+
+.t-keyword  { color: #c8ff00; }
+.t-var      { color: #79c0ff; }
+.t-key      { color: #e3b341; }
+.t-str      { color: #a5d6a7; }
+.t-bool     { color: #ff7b72; }
+.t-comment  { color: #484848; font-style: italic; }
+.t-op       { color: #888; }
+.t-punct    { color: #888; }
+
+.t-blink {
+  color: var(--accent);
+  animation: blink 1.1s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
 .hero-tag {
   display: inline-flex;
@@ -671,6 +755,17 @@ ul { list-style: none; }
   .section { padding: 4rem 1.5rem; }
   .footer { flex-direction: column; gap: 0.5rem; }
   .subpage-hero { padding: 7rem 1.5rem 3rem; }
+
+   .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .hero-right {
+    justify-content: flex-start;
+  }
+  .terminal-card {
+    max-width: 100%;
+  }
 }
 @media (max-width: 540px) {
   .hero-title { font-size: clamp(4rem, 20vw, 6rem); }
