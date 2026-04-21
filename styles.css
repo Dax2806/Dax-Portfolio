@@ -238,20 +238,20 @@ ul { list-style: none; }
   line-height: 1.75;
 }
 
-.t-line       { display: block; }
-.t-indent     { padding-left: 1.4rem; }
-.t-indent2    { padding-left: 2.8rem; }
-.t-gap        { margin-top: 0.6rem; }
+.t-line        { display: block; }
+.t-indent      { padding-left: 1.4rem; }
+.t-indent2     { padding-left: 2.8rem; }
+.t-gap         { margin-top: 0.6rem; }
 .t-cursor-line { margin-top: 0.2rem; }
 
-.t-keyword  { color: #c8ff00; }
-.t-var      { color: #79c0ff; }
-.t-key      { color: #e3b341; }
-.t-str      { color: #a5d6a7; }
-.t-bool     { color: #ff7b72; }
-.t-comment  { color: #484848; font-style: italic; }
-.t-op       { color: #888; }
-.t-punct    { color: #888; }
+.t-keyword { color: #c8ff00; }
+.t-var     { color: #79c0ff; }
+.t-key     { color: #e3b341; }
+.t-str     { color: #a5d6a7; }
+.t-bool    { color: #ff7b72; }
+.t-comment { color: #484848; font-style: italic; }
+.t-op      { color: #888; }
+.t-punct   { color: #888; }
 
 .t-blink {
   color: var(--accent);
@@ -276,7 +276,7 @@ ul { list-style: none; }
 .hero-title {
   display: block;
   font-family: var(--font-disp);
-  font-size: clamp(5rem, 14vw, 13rem);
+  font-size: clamp(3.5rem, 7vw, 7rem);
   line-height: 0.9;
   letter-spacing: -0.01em;
   color: var(--text);
