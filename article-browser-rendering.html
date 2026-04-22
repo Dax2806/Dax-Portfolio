@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Inner Workings of Browser - Rendering 101 by Daksh Patadia" />
+  <title>Inner Workings of Browser - Rendering 101 · Daksh Patadia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <header class="nav scrolled" id="nav">
+    <a href="./index.html" class="nav-logo">DP</a>
+    <button class="nav-burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="./blogs.html">← Back to Blogs</a>
+      <a href="./index.html#contact">Contact</a>
+      <a href="./Daksh-Patadia-Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article-page">
+      
+      <!-- Back Button -->
+      <a href="./blogs.html" class="article-back mono">← All Articles</a>
+
+      <!-- Article Header -->
+      <header class="article-header">
+        <span class="article-tag mono">Web Dev</span>
+        <h1 class="article-title">Inner Workings of Browser - Rendering 101</h1>
+        <p class="article-date mono">Published June 16, 2025</p>
+      </header>
+
+      <!-- Cover Image -->
+      <div class="article-cover">
+        <img src="./images/browser-rendering.jpg" alt="Browser Rendering Cover" />
+      </div>
+
+      <!-- Article Content -->
+      <div class="article-content">
+        
+        <p>When an HTML file is created and CSS is embedded, we can directly open it to the browser, to view the styled webpage. But how does the web browser actually process and renders the file? This article explores the inner working of web browsers - from loading files to final display. Before exploring the process lets get the introduction with web browser and its architecture, and the Document Object Model (DOM).</p>
+
+        <h2>What is a Web Browser?</h2>
+        
+        <p>Web browser is a software which is responsible for loading web files and displaying information in a user-friendly interface.</p>
+
+        <p>The web browser connects the user and the server. It's a highly advanced software which has the ability to display huge potential information with a simple user-friendly interface. It is an intermediate part of a web which connects the HTML, CSS, JS files and other resources with the server. It is an interaction tool for using the internet.</p>
+
+        <p>Examples of web browsers are Chrome, Safari, Firefox, Edge, Brave, etc.</p>
+
+        <p>A Web Browser is divided into several components: User Interface; Data Storage; Browser Engine - Rendering Engine, JavaScript Engine, Timers, Networking Layer.</p>
+
+        <h2>Browser Architecture</h2>
+
+        <p>Browser architecture is designed to provide a faster and secure platform that helps users to interact with the internet. The Browser is divided into several parts:</p>
+
+        <p><strong>User Interface</strong> - UI or the user interface allows all kinds of personalization to the browser, which can be initiated by the users according to the usage. Every individual has different interests and so different kinds of browser setup. The UI displays the basic features like bookmarks, groups, extensions, themes, URLs, etc.</p>
+
+        <p><strong>Data Storage</strong> - A large part of the browser goes into storing different types of data such as user preferences, browsing history, passwords, activity controls, and other regular user data.</p>
+
+        <p><strong>The Browser Engine</strong> - It keeps a note on which button is clicked by the user, which URL is asked to parse, and how the web content will be processed and displayed on the browser.</p>
+
+        <p><strong>The Rendering Engine</strong> - It interprets and renders the web content. The browser isn't capable of read the HTML files directly, so the rendering engine helps the browser to convert the HTML tags (i.e. &lt;p&gt;, &lt;body&gt;, &lt;h1&gt;, &lt;nav&gt;, etc) into the nodes.</p>
+
+        <p><strong>The Networking Layer</strong> - The Networking layer deals with the communication part. When the user clicks on a URL, the network layer initiates the HTTP request and loads the webpage. While surfing over the internet, a cookie notification pops up in the window. The Networking is behind the scenes with the cookies.</p>
+
+        <p><strong>JavaScript Engine</strong> - The HTML and CSS files just structure and add styles to the webpage. Javascript is responsible for adding interactivity in it. Therefore, JS Engine balances the dynamic behaviour in web pages.</p>
+
+        <h2>Document Object Model (DOM) & CSS Object Model (CSSOM)</h2>
+
+        <p>The DOM is the programming interface for the web documents. It represents the structure of a webpage as a tree-like model where each tag (i.e. &lt;p&gt;, &lt;body&gt;, &lt;h1&gt;, &lt;nav&gt;, etc) is a node in a tree. The DOM allows JavaScript to interact with HTML and CSS files. Job of a browser is to display the data and allow interactivity.</p>
+
+        <h3>How does the browser load the HTML in the form of NodeList?</h3>
+
+        <p>The Rendering engine comes in the picture. With the help of the rendering engine the browser loads the Nodelist.</p>
+
+        <p>If your HTML looks like this:</p>
+
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h3>How does DOM work:</h3>
+
+        <ol>
+          <li>Browser loads HTML files.</li>
+          <li>After accessing the structure (HTML) and styling (CSS), the rendering engine converts the tags and elements into raw bytes, i.e. The binary data.</li>
+          <li><strong>Tokenization</strong> - The HTML elements are treated as tokens.</li>
+          <li>These tokens are then bifurcated to different objects, and every element is structured according to hierarchy. This conversion of objects into structure is known as browser model.</li>
+          <li>The models are further connected according to the relation and hierarchy.</li>
+          <li>Hence, The Nodelist is ready.</li>
+          <li>The DOM of HTML is ready.</li>
+        </ol>
+
+        <p>After completing the rendering process of HTML, the engine starts the rendering of CSS, and it is known as CSSOM. The browser loads all the linked CSS Styling. It creates the CSSOM tree.</p>
+
+        <p>The Rendering process of HTML and CSS still doesn't help us to display the webpage in the browser. Then, The DOM and CSSOM combine together to form the Render tree. The Render tree performs certain calculations to fulfil the CSS requirement of a webpage.</p>
+
+        <h2>Running JavaScript to DOM & CSSOM</h2>
+
+        <p>The DOM and CSSOM files are ready. Thus, JS files are runnable for adding interactivity to structure. JavaScript is usually added after the content of HTML and CSS file, as the JS files have capability to manipulate the DOM & CSSOM. So, usually the HTML and CSS files are rendered before connecting the JavaScript files.</p>
+
+        <p>If we talk about JS & DOM, JavaScript has the higher priority, and if we talk about JS & CSSOM, CSSOM has the higher priority. Thus, CSS can be sometimes a bottleneck while giving interactions.</p>
+
+        <h2>Summary:</h2>
+
+        <ul>
+          <li>URL is entered</li>
+          <li>HTTP/HTTPS request is sent</li>
+          <li>Browser starts rendering</li>
+          <li>DOM Tree</li>
+          <li>CSSOM Tree</li>
+          <li>Render Tree (DOM + CSSOM)</li>
+          <li>JavaScript execution</li>
+        </ul>
+
+      </div>
+
+      <!-- Article Footer -->
+      <footer class="article-footer">
+        <a href="./blogs.html" class="btn-outline">← Back to All Articles</a>
+      </footer>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span class="mono">© 2025 Daksh Patadia</span>
+    <span class="mono">Anand, Gujarat, India</span>
+  </footer>
+
+  <script>
+    const dot = document.getElementById('cursorDot');
+    document.addEventListener('mousemove', e => {
+      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
