@@ -818,8 +818,8 @@ ul { list-style: none; }
   background: var(--bg-card2);
 }
 .blog-card-image img {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   object-fit: cover;
   transition: transform 0.4s var(--ease);
 }
