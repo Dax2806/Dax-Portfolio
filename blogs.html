@@ -14,6 +14,7 @@
   <div class="cursor" id="cursor"></div>
   <div class="cursor-dot" id="cursorDot"></div>
 
+  <!-- NAVIGATION (same as other pages) -->
   <header class="nav scrolled" id="nav">
     <a href="./index.html" class="nav-logo">DP</a>
     <button class="nav-burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
@@ -27,19 +28,39 @@
   </header>
 
   <main>
+    <!-- HERO SECTION -->
     <section class="subpage-hero">
       <div class="subpage-hero-inner">
         <a href="./index.html#projects" class="back-link mono">← Back to projects</a>
         <p class="section-label mono">[ Blogs &amp; Writing ]</p>
         <h1 class="subpage-title">Written<br><em>Work</em></h1>
-        <p class="subpage-desc">LinkedIn articles, Medium posts, internal documentation, and technical writing spanning engineering and design.</p>
+        <p class="subpage-desc">Technical articles on web development, UI/UX, and engineering concepts.</p>
       </div>
     </section>
-    <section class="section subpage-content">
-      <div class="empty-state">
+
+    <!-- ARTICLE CARDS GRID -->
+    <section class="section blog-grid-section">
+      
+      <!-- Article Card 1 -->
+      <article class="blog-card will-reveal">
+        <div class="blog-card-image">
+          <img src="./images/browser-rendering.jpg" alt="Browser Rendering Article Cover" />
+          <span class="blog-tag">Web Dev</span>
+        </div>
+        <div class="blog-card-content">
+          <h3>Inner Workings of Browser - Rendering 101</h3>
+          <p class="blog-date mono">June 16, 2025</p>
+          <p class="blog-excerpt">Explore how web browsers process HTML and CSS files — from loading to final display. A deep dive into DOM, CSSOM, and the rendering pipeline.</p>
+          <a href="./article-browser-rendering.html" class="blog-read-btn">Read Article →</a>
+        </div>
+      </article>
+
+      <!-- Placeholder for more articles (you'll add these later) -->
+      <div class="blog-placeholder will-reveal">
         <span class="wip-dot"></span>
-        <span class="mono">Articles being added — check back soon</span>
+        <span class="mono">More articles coming soon</span>
       </div>
+
     </section>
   </main>
 
@@ -50,12 +71,22 @@
 
   <script>
     const dot = document.getElementById('cursorDot');
-document.addEventListener('mousemove', e => {
-  dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-});
-    const burger=document.getElementById('burger');
-    const navLinks=document.getElementById('navLinks');
-    burger.addEventListener('click',()=>{navLinks.classList.toggle('open');burger.classList.toggle('open');});
+    document.addEventListener('mousemove', e => {
+      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+    const reveals = document.querySelectorAll('.will-reveal');
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('revealed'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => ro.observe(el));
   </script>
 </body>
 </html>
