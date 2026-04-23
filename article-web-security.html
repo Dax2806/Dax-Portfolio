@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How Secure is The Web? HTTP vs HTTPS vs SSH by Daksh Patadia" />
+  <title>How Secure is The Web? HTTP vs HTTPS vs SSH · Daksh Patadia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <header class="nav scrolled" id="nav">
+    <a href="./index.html" class="nav-logo">DP</a>
+    <button class="nav-burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="./blogs.html">← Back to Blogs</a>
+      <a href="./index.html#contact">Contact</a>
+      <a href="./public/Daksh-Patadia-Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article-page">
+      
+      <a href="./blogs.html" class="article-back mono">← All Articles</a>
+
+      <header class="article-header">
+        <span class="article-tag mono">Security</span>
+        <h1 class="article-title">How Secure is The Web? HTTP vs HTTPS vs SSH</h1>
+        <p class="article-date mono">Published August 12, 2025</p>
+      </header>
+
+      <div class="article-cover">
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000&auto=format&fit=crop" alt="Web Security Matrix Code" />
+      </div>
+
+      <div class="article-content">
+        
+        <h2>What is Internet Protocol?</h2>
+        <p>Internet protocols are standardized rules that enable computers and other devices to communicate across the Internet. They break information into packets, address them, and route them to the correct destination. These protocols ensure that data is transmitted, received, and interpreted accurately between different systems.</p>
+        <p>There are various types of Internet protocols, each designed for a specific function—such as transferring files, sending emails, or securing communication.</p>
+        <p>Every device connected to the Internet has a unique IP address that identifies the sender and receiver, making reliable communication possible.</p>
+
+        <h2>What is IP Addressing?</h2>
+        <p>An IP (Internet Protocol) address is a unique numerical identifier assigned to every device on a network. It allows the Internet to distinguish between different computers, routers, and websites, ensuring data reaches the correct destination. IP also defines the rules for how data is structured, addressed, and transmitted across networks.</p>
+        
+        <p>There are two versions of IP addresses:</p>
+        <ul>
+            <li><strong>IPv4</strong>, which is 32 bits long.</li>
+            <li><strong>IPv6</strong>, which is 128 bits long and created to overcome IPv4 address exhaustion.</li>
+        </ul>
+
+        <p>IPv4 addresses are divided into five classes:</p>
+        <ul>
+            <li><strong>Class A:</strong> For very large networks</li>
+            <li><strong>Class B:</strong> For medium-sized networks</li>
+            <li><strong>Class C:</strong> For small networks</li>
+            <li><strong>Class D:</strong> Reserved for multicasting (sending a packet to multiple devices at once)</li>
+            <li><strong>Class E:</strong> Reserved for experimental and future use</li>
+        </ul>
+
+        <p>IP addressing works much like a home address system—without a unique address, devices cannot send or receive information. Every IP address performs two key functions: <strong>Identification</strong> (identifying the specific device) and <strong>Location addressing</strong> (specifying where the device is located in the network).</p>
+
+        <h2>Need for an Internet Protocol</h2>
+        <p>When data is exchanged over the Internet, the sender and receiver may be on different networks with different data transfer speeds. To ensure smooth communication, protocols manage flow control and access control.</p>
+        <p>For example, if sender X transmits data at 10 Mbps while receiver Y can only accept 5 Mbps, data loss will occur. To prevent this, the receiver notifies the sender about the speed difference, allowing the sender to reduce its transmission rate. This coordination ensures reliable data delivery.</p>
+        <p>Access control determines which device can use a shared communication link at a given moment. Without it, multiple devices sending data simultaneously could cause collisions, leading to corrupted or lost data.</p>
+        
+        <p>Internet protocols are essential because they:</p>
+        <ul>
+            <li>Uniquely identify devices</li>
+            <li>Ensure accurate data delivery</li>
+            <li>Route data efficiently across networks</li>
+            <li>Enable communication between different systems</li>
+        </ul>
+
+        <div class="article-cover" style="margin: 3rem auto;">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop" alt="Routing and Servers Placeholder" />
+        </div>
+
+        <h2>Working of Internet Protocol</h2>
+        <p>When data is sent over the Internet, the Internet Protocol (IP) ensures that it reaches the correct destination efficiently and accurately. It works through several steps:</p>
+        <ol>
+            <li><strong>Dividing Data into Packets:</strong> Large data is broken into small units called packets. Each packet contains part of the information along with the destination address.</li>
+            <li><strong>Addressing:</strong> Every device has a unique IP address that identifies where the data is coming from and where it should go.</li>
+            <li><strong>Routing Packets:</strong> Packets travel through multiple routers, which guide them toward the correct destination—similar to how mail is sorted through various post offices.</li>
+            <li><strong>Reassembling Data:</strong> Once all packets reach the destination, they are combined to reconstruct the original message or file.</li>
+            <li><strong>Handling Missing Packets:</strong> If any packets are lost during transmission, the system requests them again to ensure complete data delivery.</li>
+        </ol>
+
+        <p>A good way to understand IP is to imagine sending a letter. The sender and receiver addresses on an envelope help the postal service deliver it correctly. Similarly, devices use IP addresses—like <code>192.168.1.1</code>—as their “home addresses.”</p>
+        
+        <p><strong>Example:</strong> When you open a website such as <code>www.google.com</code>:</p>
+        <ol>
+            <li>Your computer asks a DNS server for Google’s IP address.</li>
+            <li>It then sends a request to that IP.</li>
+            <li>Google’s server processes the request and sends data back.</li>
+            <li>Your browser displays the website.</li>
+        </ol>
+
+        <h2>Different Types of Internet Protocols</h2>
+        <ul>
+            <li><strong>TCP / IP</strong> = Transmission Control Protocol</li>
+            <li><strong>HTTPS</strong> = Hypertext Transfer Protocol Secure</li>
+            <li><strong>HTTP</strong> = Hypertext Transfer Protocol</li>
+            <li><strong>SMTP</strong> = Simple Mail Transfer Protocol</li>
+            <li><strong>PPP</strong> = Point-to-Point Protocol</li>
+            <li><strong>FTP</strong> = File Transfer Protocol</li>
+            <li><strong>SFTP</strong> = Secure File Transfer Protocol</li>
+            <li><strong>SSH</strong> = Secure Shell</li>
+        </ul>
+
+        <h2>HTTP (Hypertext Transfer Protocol)</h2>
+        <p>HTTP (HyperText Transfer Protocol) is the primary protocol used to transfer hypertext and other web content across the Internet. Defined by the World Wide Web (WWW), it specifies how information should be formatted, transmitted, and how web browsers and servers should respond to various requests.</p>
+        <p>Whenever you browse the web, you are indirectly using HTTP to load text, images, videos, and other multimedia resources.</p>
+        
+        <h3>How HTTP Works (Basic Flow):</h3>
+        <ol>
+            <li>The client (browser) sends a request to the server asking for a webpage or resource.</li>
+            <li>The server receives the request and locates the required data.</li>
+            <li>The server sends back a response, which includes the content and a status code.</li>
+            <li>The browser processes this response and displays the webpage to the user.</li>
+        </ol>
+        
+        <p><strong>Is HTTP secure?</strong> No. HTTP transfers data in plain text, which makes it vulnerable to interception. To ensure security, encryption is used in HTTPS (HTTP Secure), the safer version of the protocol.</p>
+
+        <div class="article-cover" style="margin: 3rem auto;">
+            <img src="https://images.unsplash.com/photo-1614064641913-a520faff82d6?q=80&w=1000&auto=format&fit=crop" alt="Security Lock Placeholder" />
+        </div>
+
+        <h2>HTTPS (Hypertext Transfer Protocol Secure)</h2>
+        <p>HTTPS (HyperText Transfer Protocol Secure) is the secure version of HTTP. It uses SSL/TLS encryption to protect data exchanged between a user’s browser and a website, ensuring privacy, authenticity, and data integrity. Websites that handle sensitive information—such as credit card numbers, passwords, or OTPs—must use HTTPS to prevent unauthorized access or data theft.</p>
+        
+        <h3>What Makes HTTPS Secure?</h3>
+        <p>HTTPS relies on SSL/TLS to:</p>
+        <ul>
+            <li>Encrypt all data sent and received</li>
+            <li>Verify the website’s identity through digital certificates</li>
+            <li>Prevent tampering, spying, or data interception during transmission</li>
+        </ul>
+
+        <h3>How HTTPS Works:</h3>
+        <ol>
+            <li>The browser requests a secure connection to the website.</li>
+            <li>The website sends its SSL certificate, containing its identity and public key.</li>
+            <li>The browser checks whether the certificate is valid and trusted.</li>
+            <li>Once verified, an encrypted communication channel is established.</li>
+            <li>All data is then exchanged securely.</li>
+        </ol>
+        <p>To enable HTTPS, a website needs an SSL certificate issued by a Certificate Authority (CA). Before entering sensitive information online, users should always check that the website URL begins with HTTPS, indicating a secure connection.</p>
+
+        <h2>Secure Shell (SSH)</h2>
+        <p>SSH (Secure Shell) is a secure network protocol used for remote login and managing devices over the internet. It provides an encrypted connection that protects all data exchanged between a user and a remote system, making it much safer than older protocols like Telnet.</p>
+        <p>SSH uses public-key cryptography for authentication and encryption, ensuring that only authorized users can access the remote device. It also supports secure file transfers through SCP (Secure Copy) and SFTP (Secure File Transfer Protocol).</p>
+        <p>SSH is widely used on Unix/Linux systems and is also available on Windows. System administrators, developers, and other technical users commonly rely on SSH to manage servers and network devices remotely.</p>
+        
+        <h3>How SSH Works:</h3>
+        <ol>
+            <li>The user runs an SSH command to connect to a remote system.</li>
+            <li>Both systems exchange public/private keys for authentication.</li>
+            <li>Once verified, an encrypted session is established.</li>
+            <li>The user can then execute commands or transfer files securely.</li>
+        </ol>
+
+        <h2>Introduction to SSL & TLS</h2>
+        <p>SSL (Secure Sockets Layer) is a cryptographic protocol designed to secure communication over the internet by encrypting data, authenticating identities, and ensuring data integrity. Although SSL was widely used in the past, it has been replaced by TLS (Transport Layer Security), which offers stronger security and improved performance. Today, most references to “SSL” in practice actually mean SSL/TLS.</p>
+        
+        <h3>What SSL/TLS Do:</h3>
+        <ul>
+            <li><strong>Encrypt Data:</strong> All transmitted information is scrambled, so intercepted data appears unreadable.</li>
+            <li><strong>Authenticate Identity:</strong> Through a process called the SSL/TLS handshake, devices exchange certificates to confirm they are communicating with the correct party.</li>
+            <li><strong>Ensure Data Integrity:</strong> Digital signatures ensure that data has not been altered during transmission.</li>
+        </ul>
+        
+        <h3>How SSL/TLS Work:</h3>
+        <ol>
+            <li>The browser connects to a website using <code>https://</code>.</li>
+            <li>The website sends its SSL/TLS certificate, issued by a trusted Certificate Authority (CA).</li>
+            <li>The browser verifies the certificate’s authenticity.</li>
+            <li>After verification, both sides generate encryption keys and establish a secure session.</li>
+            <li>Encrypted data is then safely exchanged between the browser and the server.</li>
+        </ol>
+
+        <h2>Conclusion</h2>
+        <p>Internet protocols play a vital role in ensuring seamless, secure, and efficient communication across global networks. They define how data is addressed, transmitted, routed, and delivered, enabling devices—from computers to servers—to interact reliably. Protocols like IP, TCP/IP, HTTP, and DNS form the foundation of basic communication, while secure protocols such as HTTPS, SSH, and SSL/TLS protect data integrity and privacy in an increasingly interconnected world.</p>
+        <p>Together, these protocols create a structured ecosystem that supports everything from browsing websites to remote server management and secure transactions. Understanding how they work helps us appreciate the complexity of the internet and highlights the importance of using secure, modern protocols to keep online communication safe and trustworthy.</p>
+
+      </div>
+
+      <footer class="article-footer">
+        <a href="./blogs.html" class="btn-outline">← Back to All Articles</a>
+      </footer>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span class="mono">© 2025 Daksh Patadia</span>
+    <span class="mono">Anand, Gujarat, India</span>
+  </footer>
+
+  <script>
+    const dot = document.getElementById('cursorDot');
+    document.addEventListener('mousemove', e => {
+      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
