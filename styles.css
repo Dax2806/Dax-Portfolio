@@ -622,6 +622,62 @@ ul { list-style: none; }
 .skill-tags span:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
 
 /* ──────────────────────────────────
+   ACHIEVEMENTS
+────────────────────────────────── */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2px; /* Creates brutalist grid borders */
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.achieve-card {
+  background: var(--bg-card);
+  padding: 2.5rem 2rem;
+  transition: background 0.3s ease;
+}
+
+.achieve-card:hover {
+  background: var(--bg-card2);
+}
+
+.achieve-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line-hi);
+  transition: border-color 0.3s ease;
+}
+
+.achieve-card:hover .achieve-tag {
+  border-bottom-color: var(--accent);
+}
+
+.achieve-title {
+  font-family: var(--font-disp);
+  font-size: 1.8rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 0.8rem;
+}
+
+.achieve-desc {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* ──────────────────────────────────
    CONTACT
 ────────────────────────────────── */
 .contact-sub {
