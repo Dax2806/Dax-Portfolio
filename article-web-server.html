@@ -1,1 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Web Servers Demystified - How Internet Serves every click? by Daksh Patadia" />
+  <title>Web Servers Demystified - How Internet Serves every click? · Daksh Patadia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
 
+  <header class="nav scrolled" id="nav">
+    <a href="./index.html" class="nav-logo">DP</a>
+    <button class="nav-burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="./blogs.html">← Back to Blogs</a>
+      <a href="./index.html#contact">Contact</a>
+      <a href="./public/Daksh-Patadia-Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article-page">
+      
+      <a href="./blogs.html" class="article-back mono">← All Articles</a>
+
+      <header class="article-header">
+        <span class="article-tag mono">Web Dev</span>
+        <h1 class="article-title">Web Servers Demystified - How Internet Serves every click?</h1>
+        <p class="article-date mono">Published July 06, 2025</p>
+      </header>
+
+      <div class="article-cover">
+        <img src="./public/web-browser.png" alt="Web Server Infrastructure" />
+      </div>
+
+      <div class="article-content">
+        
+        <p>Think of a web server like a waiter in a restaurant: You (the user) place an order (request a website). The waiter (web server) goes to the kitchen (storage). He brings back the dish (website content) to you.</p>
+
+        <p>When you visit a website, your browser sends a request. The web server responds by delivering resources like:</p>
+        <ul>
+            <li>HTML pages</li>
+            <li>Images</li>
+            <li>Videos</li>
+            <li>Stylesheets (CSS)</li>
+            <li>JavaScript files</li>
+        </ul>
+
+        <p><strong>Web Server as a Software</strong> - A program that delivers (or "serves") web content like HTML files, images, videos, and more to users via the HTTP/HTTPS protocol.</p>
+        
+        <p><strong>Web Server as a Hardware</strong> - A physical computer or cloud-based machine that runs this software and stores the website's data (files, databases, etc.).</p>
+
+        <p>A web server’s primary role is to serve web pages for a website. A web page can be rendered from a single HTML file, or a complex assortment of resources fitted together. If you want to host your web application on the internet, in many cases you will need a web server.</p>
+
+        <h2>Tasks handled by Web Servers</h2>
+
+        <p>One of the most common use cases for web servers is serving files necessary for rendering a website in a browser. Some common tasks handled by web servers:</p>
+        <ul>
+            <li>Serves HTML, CSS, and JavaScript files.</li>
+            <li>Serves images and videos.</li>
+            <li>Handles HTTP error messaging.</li>
+            <li>Handles user requests, often concurrently.</li>
+            <li>Directs URL matching and rewriting.</li>
+        </ul>
+
+        <h2>How does a Web Server work?</h2>
+
+        <p>When a user accesses a website by entering a URL in their web browser, the browser sends an HTTP request to the web server hosting the website. The web server processes this request and returns the necessary resources to display the page on the user’s browser.</p>
+
+        <ol>
+            <li>You type a URL into your browser → <code>https://www.example.com</code></li>
+            <li>Your browser sends a request to the web server hosting example.com</li>
+            <li>The web server receives the request</li>
+            <li>It sends back the correct web page (like <code>index.html</code>) and other resources (images, CSS, JS)</li>
+            <li>Your browser displays the page to you</li>
+        </ol>
+
+        <p>Imagine this website: <code>https://www.wikipedia.org</code><br>
+        When you visit it, your browser contacts the Wikipedia web server. That server then sends the homepage data to your browser. You see the webpage, thanks to the server responding to your request.</p>
+
+        <h2>Difference between Web Server and Web Host</h2>
+
+        <ul>
+            <li><strong>Web Server</strong> = The chef who prepares the dish (web content).</li>
+            <li><strong>Web Host</strong> = The restaurant where the chef works and you go to eat (store and access your website).</li>
+        </ul>
+
+        <p>A Web Server is a software or hardware, which delivers web content to a user. Whereas, a Web Host provides the space and tools to store your website on the internet.</p>
+
+        <p>Web Server handles requests and serves web pages to browsers. Web Host stores website files and keeps them accessible online.</p>
+
+        <h2>Popular Web Server Software</h2>
+
+        <ul>
+            <li><strong>Apache HTTP Server</strong> - One of the most widely used open-source web servers.</li>
+            <li><strong>Nginx</strong> - High performance, often used for high traffic websites.</li>
+            <li><strong>Microsoft IIS</strong> - Web Server developed by Microsoft for Windows based systems.</li>
+            <li><strong>Node.js</strong> - Technically a JavaScript runtime, but often used to build custom web servers.</li>
+        </ul>
+
+        <p>Web servers are at the heart of the internet. Without them, websites couldn’t function. Whether you’re a developer, tech enthusiast, or someone curious about how websites work, understanding web servers is a great step in your tech journey.</p>
+        
+        <p><em>A big thanks for engaging with this article.</em><br>
+        <strong>Engineered by ZOLO!</strong></p>
+
+      </div>
+
+      <footer class="article-footer">
+        <a href="./blogs.html" class="btn-outline">← Back to All Articles</a>
+      </footer>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span class="mono">© 2025 Daksh Patadia</span>
+    <span class="mono">Anand, Gujarat, India</span>
+  </footer>
+
+  <script>
+    const dot = document.getElementById('cursorDot');
+    document.addEventListener('mousemove', e => {
+      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
