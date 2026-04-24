@@ -957,6 +957,33 @@ ul { list-style: none; }
   gap: 0.9rem;
 }
 
+/* Container to hold both buttons */
+.blog-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pushes the buttons to opposite sides */
+  margin-top: auto; /* Ensures it stays at the bottom of the card */
+  border-top: 1px dashed var(--line); /* Adds a subtle divider line */
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Specific styling for the LinkedIn button */
+.blog-linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-soft);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.blog-linkedin-btn:hover {
+  color: #0a66c2; /* Changes to official LinkedIn Blue on hover */
+}
+
 .blog-placeholder {
   display: flex;
   align-items: center;
