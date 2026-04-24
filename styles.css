@@ -131,8 +131,9 @@ ul { list-style: none; }
   flex-direction: column;
   gap: 5px;
   padding: 0.5rem;
-  z-index: 101;
-  cursor: none;
+  position: relative; /* <-- Added this to activate z-index */
+  z-index: 101;       /* Now it stays on top of the open menu! */
+  cursor: pointer;    /* Better UX for interactions */
 }
 .nav-burger span {
   display: block;
