@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Frontend Project Case Study by Daksh Patadia" />
+  <title>Project Details · Daksh Patadia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <header class="nav scrolled" id="nav">
+    <a href="./index.html" class="nav-logo">DP</a>
+    <button class="nav-burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="./web-applications.html">← Back to Web Apps</a>
+      <a href="./index.html#contact">Contact</a>
+      <a href="./public/Daksh-Patadia-Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article-page">
+      
+      <a href="./web-applications.html" class="article-back mono">← All Web Applications</a>
+
+      <header class="article-header">
+        <span class="article-tag mono">Frontend Development</span>
+        <h1 class="article-title">TRAVELX</h1>
+        <p class="article-date mono">Tech Stack: HTML / CSS / JavaScript</p>
+      </header>
+
+      <div class="article-cover">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop" alt="Main Project Screenshot" />
+      </div>
+
+      <div class="article-content">
+        
+        <h2>Project Overview</h2>
+        <p>Write a comprehensive summary of your project here. What was the goal? What problem were you trying to solve? Who is the target audience for this website?</p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Responsive UI:</strong> Built a fluid grid system that adapts perfectly to desktop, tablet, and mobile devices.</li>
+            <li><strong>Interactive Elements:</strong> Used JavaScript to create smooth scrolling, modal popups, and dynamic form validation.</li>
+            <li><strong>Brutalist Aesthetics:</strong> Implemented a high-contrast, dark-mode design system with stark typography.</li>
+        </ul>
+
+        <h2>Interface Screenshots</h2>
+        <p>A closer look at the specific pages and components built for this application:</p>
+
+        <div class="project-gallery">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Screenshot 1" />
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop" alt="Screenshot 2" />
+        </div>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 4rem; justify-content: center;">
+          <a href="https://dax2806.github.io/TravelX/" target="_blank" class="btn-primary">View Live Demo ↗</a>
+          <a href="https://github.com/Dax2806/TravelX" target="_blank" class="btn-outline" style="margin-top: 0;">View Source Code ↗</a>
+        </div>
+
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span class="mono">© 2026 Daksh Patadia</span>
+    <span class="mono">Anand, Gujarat, India</span>
+  </footer>
+
+  <script>
+    const dot = document.getElementById('cursorDot');
+    document.addEventListener('mousemove', e => {
+      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
