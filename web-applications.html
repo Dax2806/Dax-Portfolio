@@ -78,41 +78,33 @@
     <span class="mono">Anand, Gujarat, India</span>
   </footer>
 
-  <script>
-    const dot = document.getElementById('cursorDot');
-document.addEventListener('mousemove', e => {
-  dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-});
-    const navLinks=document.getElementById('navLinks');
-    burger.addEventListener('click',()=>{navLinks.classList.toggle('open');burger.classList.toggle('open');});
-  </script>
-
-  <script>
-  // Scroll Reveal
-  const revealEls = document.querySelectorAll('.will-reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('revealed');
-        observer.unobserve(e.target); // stop watching once revealed
-      }
-    });
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => observer.observe(el));
-
-  // Cursor
+ <script>
+  // Custom cursor
   const dot = document.getElementById('cursorDot');
   document.addEventListener('mousemove', e => {
     dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
   });
 
-  // Nav burger
-  const navLinks = document.getElementById('navLinks');
+  // Mobile nav
   const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
   burger.addEventListener('click', () => {
     navLinks.classList.toggle('open');
     burger.classList.toggle('open');
   });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    burger.classList.remove('open');
+  }));
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.will-reveal');
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('revealed'); ro.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => ro.observe(el));
 </script>
   
 </body>
