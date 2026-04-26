@@ -1150,3 +1150,29 @@ ul { list-style: none; }
   }
 }
 
+/* ──────────────────────────────────
+   PROJECT GALLERY GRID
+────────────────────────────────── */
+.project-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.project-gallery img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  transition: border-color 0.3s ease;
+}
+
+.project-gallery img:hover {
+  border-color: var(--line-mid);
+}
+
+@media (max-width: 768px) {
+  .project-gallery {
+    grid-template-columns: 1fr; /* Stacks images on mobile */
+  }
+}
