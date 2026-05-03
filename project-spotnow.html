@@ -1,1 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SpotNow - City Discovery Platform Project by Daksh Patadia" />
+  <title>SpotNow · Daksh Patadia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
 
+  <header class="nav scrolled" id="nav">
+    <a href="./index.html" class="nav-logo">DP</a>
+    <button class="nav-burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="./web-applications.html">← Back to Web Apps</a>
+      <a href="./index.html#contact">Contact</a>
+      <a href="./public/Daksh-Patadia-Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article-page">
+      
+      <!-- Back Button -->
+      <a href="./web-applications.html" class="article-back mono">← All Web Applications</a>
+
+      <!-- Project Header -->
+      <header class="article-header">
+        <span class="article-tag mono">Full-Stack Development</span>
+        <h1 class="article-title">SpotNow: City Discovery Platform</h1>
+        <p class="article-date mono">Tech Stack: Node.js / Express / MongoDB / HTML+CSS+JS / Leaflet.js</p>
+      </header>
+
+      <!-- Main Cover/Hero Screenshot -->
+      <div class="article-cover">
+        <!-- ⚠️ Replace with your main project image (e.g., ./public/Screenshot%202026-05-03%20220611.png) -->
+        <img src="./public/Screenshot%202026-05-03%20220611.png" alt="SpotNow Main Interface Screenshot" />
+      </div>
+
+      <!-- Project Summary & Content -->
+      <div class="article-content">
+        
+        <h2>Project Overview</h2>
+        <p>SpotNow is a modern, community-driven city discovery platform designed to help users find and share "hidden gems"—unique, lesser-known locations such as tucked-away cafés, secret gardens, rooftop views, and street art. The project connects local explorers with travelers by providing an interactive, map-based interface for authentic urban exploration.</p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Interactive Exploration:</strong> Users can browse a filterable grid of spots (Cafés, Parks, Viewpoints, Art) accompanied by real-time map markers powered by Leaflet.js.</li>
+            <li><strong>Geographical Pinning:</strong> A dedicated "Add Spot" interface allows users to click directly on a map to capture precise latitude and longitude coordinates.</li>
+            <li><strong>Community Contributions:</strong> Registered users can submit new spots by providing a name, location description, category, and a photo upload.</li>
+            <li><strong>Secure Authentication:</strong> Features a complete Signup and Login system with hashed passwords to protect user identities.</li>
+            <li><strong>Privacy & Access Control:</strong> Implements a global "Auth Guard" (Bouncer Script) that redirects unauthorized visitors to the login page, ensuring the platform's content is exclusive to the community.</li>
+            <li><strong>Dynamic UI State:</strong> The navigation bar automatically updates to display the logged-in username and a logout option once a user is authenticated.</li>
+        </ul>
+
+        <h2>Technical Architecture</h2>
+        <p>SpotNow is built on a robust full-stack architecture, separating client-side presentation from server-side data management.</p>
+        
+        <!-- Table for Architecture (Fits the brutalist style well) -->
+        <div style="overflow-x: auto; margin: 2rem 0;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                <thead style="border-bottom: 2px solid var(--accent); color: var(--text); font-family: var(--font-mono); text-align: left;">
+                    <tr>
+                        <th style="padding: 1rem; border-bottom: 1px solid var(--line-hi);">Layer</th>
+                        <th style="padding: 1rem; border-bottom: 1px solid var(--line-hi);">Technology Used</th>
+                        <th style="padding: 1rem; border-bottom: 1px solid var(--line-hi);">Purpose</th>
+                    </tr>
+                </thead>
+                <tbody style="color: var(--text-soft);">
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Frontend</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">HTML5, CSS3, JavaScript (ES6+)</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Structural layout and interactive client-side logic.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Styling</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Bootstrap 5 & Custom CSS</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Responsive design and "Glassmorphism" aesthetic.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Mapping</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Leaflet.js & OpenStreetMap</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Interactive map rendering and coordinate selection.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Backend</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Node.js & Express</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">RESTful API routing and server-side logic.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Database</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">MongoDB Atlas & Mongoose</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Cloud NoSQL storage for Users and Spots.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Auth</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Bcryptjs</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Secure one-way password hashing for the database.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Storage</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Multer</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Middleware for handling multipart/form-data (image uploads).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Component Breakdown</h2>
+        
+        <h3>1. Frontend Experience</h3>
+        <ul>
+            <li><strong>Visual Identity:</strong> The project uses the DM Sans font for a clean look and a warm primary gradient (#ff7645 to #ff9a6c) throughout the UI.</li>
+            <li><strong>Glassmorphism Design:</strong> High-end visual effects are achieved using semi-transparent backgrounds (<code>rgba(255, 255, 255, 0.92)</code>), backdrop filters, and soft shadows to create a layered "glass" feel for cards and forms.</li>
+            <li><strong>Responsive Layouts:</strong> The application is built to be mobile-friendly, utilizing Bootstrap's grid system to stack content effectively on smaller screens.</li>
+        </ul>
+
+        <h3>2. Backend Infrastructure</h3>
+        <ul>
+            <li><strong>Data Models:</strong> Mongoose schemas define the structure for Spots (storing name, location, category, coordinates, and image URLs) and Users (storing unique usernames and hashed passwords).</li>
+            <li><strong>Environment Security:</strong> Sensitive data, such as the MongoDB connection string (<code>MONGO_URI</code>), is managed through Environment Variables to prevent exposure in the source code.</li>
+            <li><strong>File Handling:</strong> Images uploaded by users are processed by Multer and served statically via an <code>/uploads</code> route on the backend server.</li>
+        </ul>
+
+        <h3>3. Security Measures</h3>
+        <ul>
+            <li><strong>Password Hashing:</strong> Passwords are never stored in plain text; instead, they are processed with 10 salt rounds using Bcryptjs.</li>
+            <li><strong>Client-Side Session:</strong> User state is maintained in <code>localStorage</code>, allowing the application to persist the login status even if the browser is refreshed.</li>
+            <li><strong>Protected Routing:</strong> Every internal page (Index, Explore, Add-Spot, About) contains a <code>&lt;head&gt;</code>-level script that verifies the presence of a user token before rendering content.</li>
+        </ul>
+
+        <h2>Deployment Workflow</h2>
+        <p>The application follows a modern cloud deployment strategy:</p>
+        <ul>
+            <li><strong>Frontend:</strong> Hosted on Netlify, providing fast delivery of the static HTML/CSS/JS assets.</li>
+            <li><strong>Backend:</strong> Hosted on Render as a web service, handling the live API requests and database communication.</li>
+            <li><strong>Database:</strong> Managed via MongoDB Atlas, with network access configured to allow connections from the Render server IP environment.</li>
+        </ul>
+
+        <!-- Optional: Interface Screenshots (Uncomment and add image paths if you have more screenshots) -->
+        <!--
+        <h2>Interface Screenshots</h2>
+        <div class="project-gallery">
+          <img src="./public/Images/spotnow-screenshot-2.jpg" alt="SpotNow Explore Page" />
+          <img src="./public/Images/spotnow-screenshot-3.jpg" alt="SpotNow Map Interface" />
+        </div>
+        -->
+
+        <!-- Action Buttons -->
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 4rem; justify-content: center;">
+          <a href="https://spotnow-backend.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-primary">View Live Demo ↗</a>
+          <a href="https://github.com/Dax2806/SpotNow" target="_blank" rel="noopener noreferrer" class="btn-outline" style="margin-top: 0;">View Source Code ↗</a>
+        </div>
+
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span class="mono">© 2026 Daksh Patadia</span>
+    <span class="mono">Anand, Gujarat, India</span>
+  </footer>
+
+  <script>
+    const dot = document.getElementById('cursorDot');
+    document.addEventListener('mousemove', e => {
+      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
