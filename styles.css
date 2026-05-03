@@ -24,6 +24,12 @@
   --ease:      cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -1174,5 +1180,52 @@ ul { list-style: none; }
 @media (max-width: 768px) {
   .project-gallery {
     grid-template-columns: 1fr; /* Stacks images on mobile */
+  }
+}
+
+/* ===== MOBILE: Card Image Fix ===== */
+@media (max-width: 768px) {
+
+  /* app-card (web-applications page) */
+  .app-card {
+    flex-direction: column !important;
+    gap: 0;
+  }
+
+  .app-image {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .app-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* project category cards (index.html) */
+  .project-cat-card {
+    width: 100% !important;
+  }
+
+  /* achievement cards (index.html) */
+  .achievements-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* stat cards (about section) */
+  .about-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* app-content spacing */
+  .app-content {
+    padding: 1.25rem !important;
   }
 }
