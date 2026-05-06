@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Frontend Project Case Study by Daksh Patadia" />
+  <title>Project Details · Daksh Patadia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <header class="nav scrolled" id="nav">
+    <a href="./index.html" class="nav-logo">DP</a>
+    <button class="nav-burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="./web-applications.html">← Back to Web Apps</a>
+      <a href="./index.html#contact">Contact</a>
+      <a href="./public/Daksh-Patadia-Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article-page">
+      
+      <a href="./web-applications.html" class="article-back mono">← All Web Applications</a>
+
+      <header class="article-header">
+        <span class="article-tag mono">Frontend Development</span>
+        <h1 class="article-title">AGRIGO</h1>
+        <p class="article-date mono">Tech Stack: HTML5 / CSS3 / Bootstrap</p>
+      </header>
+
+      <div class="article-cover">
+        <!-- Update this image source to your AgriGo header image -->
+        <img src="./public/preview.png" alt="AgriGo Main Project Screenshot" />
+      </div>
+
+      <div class="article-content">
+        
+        <section id="agrigo-project">
+    <h2>Project Overview</h2>
+    <p>
+        <strong>AgriGo</strong> addresses the critical challenges faced by the agricultural sector today. A large number of farmers struggle with limited access to timely information, fragmented services, and a lack of digital integration. Inefficient decision-making due to outdated or incomplete data regarding weather, soil conditions, and crop insights often leads to reduced productivity and financial uncertainty. 
+    </p>
+    <p>
+        To solve this, <strong>AgriGo</strong> provides a modern, user-friendly digital platform that integrates essential agricultural tools and services into a single interface. It bridges the disconnected ecosystem between farmers, buyers, and service providers, encouraging technology adoption through an intuitive, easy-to-navigate design.
+    </p>
+
+    <h2>Key Features</h2>
+    <ul>
+        <li>
+            <strong>Centralized Access:</strong> A unified platform where users can easily access agricultural resources, tools, and services without having to switch between multiple fragmented sources.
+        </li>
+        <li>
+            <strong>Data-Driven Insights:</strong> An integration-ready system designed to deliver real-time data such as weather updates, crop recommendations, and market trends to support better decision-making.
+        </li>
+        <li>
+            <strong>User-Centric Design:</strong> Features a clean, responsive interface specifically tailored for ease of use, ensuring high accessibility even for users with limited technical expertise.
+        </li>
+        <li>
+            <strong>Scalable Architecture:</strong> Built from the ground up with modern frontend technologies, enabling seamless integration with backend services, APIs, and future module enhancements.
+        </li>
+        <li>
+            <strong>Ecosystem Connectivity:</strong> Designed with the potential to digitally connect farmers with buyers, suppliers, and agricultural experts all in one shared space.
+        </li>
+    </ul>
+
+           <h2>Technical Details</h2>
+    <ul>
+        <li><strong>Frontend Stack:</strong> React.js for component-based UI development, JavaScript (ES6+), HTML5, and CSS3.</li>
+        <li><strong>UI & Styling:</strong> Fully responsive design ensuring seamless compatibility across mobile, tablet, and desktop devices.</li>
+        <li><strong>Development & Deployment:</strong> Version control managed via Git and GitHub, with hosting and continuous deployment handled through Netlify.</li>
+    </ul>
+   
+        </section>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 4rem; justify-content: center;">
+          <!-- Make sure to update these links with your actual AgriGo deployed URL and repo -->
+          <a href="https://agrigo-frontend.netlify.app/" target="_blank" class="btn-primary">View Live Demo ↗</a>
+          <a href="https://dax2806.github.io/AgriGo/" target="_blank" class="btn-outline" style="margin-top: 0;">View Source Code ↗</a>
+        </div>
+
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span class="mono">© 2026 Daksh Patadia</span>
+    <span class="mono">Anand, Gujarat, India</span>
+  </footer>
+
+  <script>
+    const dot = document.getElementById('cursorDot');
+    document.addEventListener('mousemove', e => {
+      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
