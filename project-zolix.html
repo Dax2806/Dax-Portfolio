@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Zolix - Modern CRM Platform Project by Daksh Patadia" />
+  <title>Zolix CRM · Daksh Patadia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <header class="nav scrolled" id="nav">
+    <a href="./index.html" class="nav-logo">DP</a>
+    <button class="nav-burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="./web-applications.html">← Back to Web Apps</a>
+      <a href="./index.html#contact">Contact</a>
+      <a href="./public/Daksh-Patadia-Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article-page">
+      
+      <!-- Back Button -->
+      <a href="./web-applications.html" class="article-back mono">← All Web Applications</a>
+
+      <!-- Project Header -->
+      <header class="article-header">
+        <span class="article-tag mono">Full-Stack SaaS Application</span>
+        <h1 class="article-title">Zolix: Customer Relationship Management</h1>
+        <p class="article-date mono">Tech Stack: React / Node.js / Express / MongoDB / Tailwind CSS</p>
+      </header>
+
+      <!-- Main Cover/Hero Screenshot -->
+      <div class="article-cover" style="background: #030014; display: flex; align-items: center; justify-content: center; height: 400px; border-radius: 8px;">
+         <div style="color: white; font-family: 'Bebas Neue', sans-serif; font-size: 5rem; letter-spacing: 4px;">
+            ZOLIX CRM
+         </div>
+      </div>
+
+      <!-- Project Summary & Content -->
+      <div class="article-content">
+        
+        <h2>Project Overview</h2>
+        <p>Zolix is a highly advanced, production-ready SaaS Customer Relationship Management (CRM) platform designed to simplify operations and automate growth for modern teams. It features a complete end-to-end architecture from secure authentication to a powerful workflow automation engine, all wrapped in a visually stunning dark-mode-first premium user interface.</p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Intelligent Lead Management:</strong> Advanced Kanban boards and data tables to track, organize, and transition leads through the sales pipeline. Features CSV import/export capabilities.</li>
+            <li><strong>Workflow Automation Engine:</strong> A customizable rules engine that allows users to trigger automated actions (like sending emails or creating tasks) when specific conditions are met (e.g., a lead status changes).</li>
+            <li><strong>Role-Based Access Control (RBAC):</strong> Enterprise-grade security with strict role boundaries. Different interfaces and permissions exist for 'owners', 'admins', and 'managers'.</li>
+            <li><strong>Premium Dark UI:</strong> Built with Tailwind CSS and Lucide Icons, featuring advanced glassmorphism, dynamic gradients, mesh backgrounds, and highly polished micro-animations.</li>
+            <li><strong>Invitation-Based Onboarding:</strong> Secure tokenized invite system allowing administrators to invite new team members directly via email links.</li>
+            <li><strong>Full Workspace Isolation:</strong> Multi-tenant architecture ensuring data privacy across different organizations using the platform.</li>
+        </ul>
+
+        <h2>Technical Architecture</h2>
+        <p>Zolix is built on a scalable MERN stack, with a focus on clean code, reusable components, and secure data handling.</p>
+        
+        <div style="overflow-x: auto; margin: 2rem 0;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                <thead style="border-bottom: 2px solid var(--accent); color: var(--text); font-family: var(--font-mono); text-align: left;">
+                    <tr>
+                        <th style="padding: 1rem; border-bottom: 1px solid var(--line-hi);">Layer</th>
+                        <th style="padding: 1rem; border-bottom: 1px solid var(--line-hi);">Technology Used</th>
+                        <th style="padding: 1rem; border-bottom: 1px solid var(--line-hi);">Purpose</th>
+                    </tr>
+                </thead>
+                <tbody style="color: var(--text-soft);">
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Frontend</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">React, React Router, Vite</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Component-based SPA architecture with fast HMR.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Styling</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Tailwind CSS & Lucide React</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Utility-first styling for complex responsive layouts and sleek iconography.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Backend API</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Node.js & Express</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">RESTful JSON API with modular route controllers.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Database</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">MongoDB Atlas & Mongoose</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Relational-like schemas in a NoSQL environment (linking Leads, Users, Automations).</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Security</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">JWT & Bcrypt</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid var(--line);">Stateless authentication via JSON Web Tokens and HTTP-only cookie strategies.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Component Breakdown</h2>
+        
+        <h3>1. Frontend Experience</h3>
+        <ul>
+            <li><strong>Dynamic Routing:</strong> Utilizes React Router DOM to manage public landing pages, authentication flows, and protected dashboard routes.</li>
+            <li><strong>Advanced Layouts:</strong> Implements a persistent dashboard shell (Sidebar + Header) that seamlessly wraps nested child routes.</li>
+            <li><strong>Glassmorphic Aesthetics:</strong> Extensive use of backdrop-blur utilities combined with semi-transparent backgrounds to create a highly premium, modern software feel.</li>
+        </ul>
+
+        <h3>2. Backend Infrastructure</h3>
+        <ul>
+            <li><strong>Modular Design:</strong> The backend is strictly organized into domains (users, leads, auth, automations) keeping routes, controllers, and services cleanly separated.</li>
+            <li><strong>Automation Engine:</strong> A custom-built background service that evaluates lead status changes against user-defined rules, executing tasks or sending emails automatically.</li>
+        </ul>
+
+        <h2>Deployment Workflow</h2>
+        <p>The application is built for cloud production:</p>
+        <ul>
+            <li><strong>Frontend:</strong> Continuously deployed via Netlify, utilizing <code>_redirects</code> to support React Router's SPA routing.</li>
+            <li><strong>Backend:</strong> Hosted on Render, managing live API requests with environment variables tightly securing database URIs and JWT secrets.</li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 4rem; justify-content: center;">
+          <a href="https://github.com/Dax2806/Zolix" target="_blank" rel="noopener noreferrer" class="btn-primary">View Source Code ↗</a>
+        </div>
+
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span class="mono">© 2026 Daksh Patadia</span>
+    <span class="mono">Anand, Gujarat, India</span>
+  </footer>
+
+  <script>
+    const dot = document.getElementById('cursorDot');
+    document.addEventListener('mousemove', e => {
+      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
