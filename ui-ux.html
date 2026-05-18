@@ -22,7 +22,7 @@
       <a href="./index.html#experience">Experience</a>
       <a href="./index.html#projects">← All Projects</a>
       <a href="./index.html#contact">Contact</a>
-      <a href="./public/Daksh-Patadia-Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a>
+      <a href="./public/DakshCV110526.pdf" target="_blank" class="nav-resume">Resume ↗</a>
     </nav>
   </header>
 
@@ -51,14 +51,14 @@
           <div class="design-content">
             <div class="design-header">
               <h2 class="design-title">SOFT - Cleaning Services App</h2>
-              <a href="#" class="design-link" target="_blank" rel="noopener noreferrer">View Figma ↗</a>
+              <a href="https://www.figma.com/design/NgoXPXzPdv64Q5YVKdowym/Soft---Cleaning-Services?node-id=0-1&p=f&t=U8hbU2PncZHhIJfb-0" class="design-link" target="_blank" rel="noopener noreferrer">View Figma ↗</a>
             </div>
             <p class="design-desc">
               A premium, minimalist mobile platform connecting users with trusted cleaning service providers. Designed for busy homeowners, it features a clean blue-and-white aesthetic to evoke trust and reliability. The flow ensures quick and seamless bookings, including screens for login, home, service categories, bookings, and profile management.
             </p>
+            <p class="design-desc" style="margin-top: 10px;"><strong>Completed: June 13, 2026</strong></p>
           </div>
         </div>
-
 
         <!-- Zolix CRM -->
         <div class="design-card will-reveal">
@@ -113,12 +113,28 @@
 
   <script>
     const dot = document.getElementById('cursorDot');
-document.addEventListener('mousemove', e => {
-  dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-});
-    const burger=document.getElementById('burger');
-    const navLinks=document.getElementById('navLinks');
-    burger.addEventListener('click',()=>{navLinks.classList.toggle('open');burger.classList.toggle('open');});
+    document.addEventListener('mousemove', e => {
+      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+    
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+    
+    // Scroll reveal logic
+    const reveals = document.querySelectorAll('.will-reveal');
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed');
+          ro.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => ro.observe(el));
   </script>
 </body>
 </html>
