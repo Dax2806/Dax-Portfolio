@@ -1,1 +1,180 @@
+<article class="article-page">
+  
+  <!-- Back Button -->
+  <a href="./blogs.html" class="article-back mono">← All Articles</a>
 
+  <!-- Article Header -->
+  <header class="article-header">
+    <span class="article-tag mono">AI / Web Dev</span>
+    <h1 class="article-title">Understanding RAG: The Technology Making AI Smarter</h1>
+    <p class="article-date mono">Published June 16, 2025</p>
+  </header>
+
+  <!-- Cover Image -->
+  <div class="article-cover">
+    <img src="./public/RAG.png" alt="Understanding RAG Article Cover" />
+  </div>
+
+  <!-- Article Content -->
+  <div class="article-content">
+
+    <p>
+      Artificial Intelligence has evolved rapidly over the last few years. Tools powered by Large Language Models
+      such as ChatGPT and Claude can write articles, answer questions, summarize documents, and help developers
+      write code. But these systems still have one major limitation: they do not truly know information in real time.
+      They generate responses based on patterns learned during training, which means they can sometimes produce
+      outdated or incorrect answers.
+    </p>
+
+    <p>
+      This is where <strong>RAG (Retrieval-Augmented Generation)</strong> becomes important. RAG is one of the most
+      practical and widely used AI architectures in modern software systems because it allows AI models to access
+      external information before generating a response.
+    </p>
+
+    <p><strong>Retrieve</strong> means finding useful information.</p>
+    <p><strong>Augment</strong> means giving the AI more knowledge.</p>
+    <p><strong>Generate</strong> means creating a better response using that knowledge.</p>
+
+    <h2>What is RAG?</h2>
+
+    <p>
+      At its simplest, RAG is a framework that connects a Large Language Model to external, trustworthy data sources.
+      Instead of answering only from memory, the AI first searches relevant information and then uses that information
+      to generate a response.
+    </p>
+
+    <p>
+      RAG systems can connect to sources such as PDFs, company documents, databases, websites, APIs, emails, and
+      knowledge bases.
+    </p>
+
+    <p>
+      A simple way to think about it is this: a normal AI is like a brilliant student answering from memory, while a
+      RAG-based AI is that same student with access to a library and a search engine during the test.
+    </p>
+
+    <h2>Why RAG Exists</h2>
+
+    <p>
+      Large Language Models are powerful, but they have important limitations. They may hallucinate, their knowledge
+      can become outdated, they cannot naturally access private company data, and retraining them is expensive.
+      RAG solves these problems by giving AI systems access to external knowledge sources in real time.
+    </p>
+
+    <ul>
+      <li>It reduces hallucinations.</li>
+      <li>It keeps answers grounded in real documents.</li>
+      <li>It works with private or company-specific data.</li>
+      <li>It avoids expensive retraining for every update.</li>
+    </ul>
+
+    <h2>How RAG Works</h2>
+
+    <p>When you ask a RAG-powered chatbot a question, several steps happen in a split second:</p>
+
+    <ol>
+      <li>The user asks a question.</li>
+      <li>The system converts the question into embeddings.</li>
+      <li>It searches a vector database for similar meaning.</li>
+      <li>It retrieves the most relevant chunks of information.</li>
+      <li>That information is added to the prompt.</li>
+      <li>The LLM generates the final response.</li>
+    </ol>
+
+    <h2>Core Components of RAG</h2>
+
+    <p>To understand RAG properly, it helps to know the technologies behind it.</p>
+
+    <p><strong>LLM (Large Language Model)</strong> — AI models trained on huge amounts of text, such as GPT, Claude, and Llama.</p>
+
+    <p><strong>Embeddings</strong> — A way of converting language into numerical meaning so the system can compare similarity.</p>
+
+    <p><strong>Chunking</strong> — Splitting large documents into smaller pieces so the AI can process them efficiently.</p>
+
+    <p><strong>Similarity Search</strong> — Finding the closest matching information to the user’s question.</p>
+
+    <p><strong>Vector Database</strong> — A database that stores meaning-based representations instead of only exact keywords.</p>
+
+    <p><strong>Retrievers</strong> — Components that fetch the most relevant chunks from the database.</p>
+
+    <p><strong>Context Window</strong> — The amount of text the AI can read at one time.</p>
+
+    <h2>Why RAG is a Game Changer</h2>
+
+    <p>
+      RAG has transformed how modern AI systems are built. Instead of relying only on pretrained memory, AI can now
+      access external knowledge dynamically.
+    </p>
+
+    <ul>
+      <li>It improves factual accuracy by grounding answers in real documents.</li>
+      <li>It can show where the answer came from, such as a page or section in a document.</li>
+      <li>It keeps sensitive data under your control.</li>
+      <li>It reduces the chance of fabricated responses.</li>
+      <li>It allows frequent updates without retraining the model.</li>
+    </ul>
+
+    <h2>Modern RAG Ecosystem</h2>
+
+    <p>Several tools and frameworks power modern RAG systems today:</p>
+
+    <p><strong>LangChain</strong> — A popular framework for building AI applications and connecting models, tools, and workflows.</p>
+
+    <p><strong>LlamaIndex</strong> — Focused on document indexing, retrieval pipelines, and data connectors.</p>
+
+    <p><strong>Pinecone</strong> — A managed vector database platform optimized for similarity search and scalable retrieval.</p>
+
+    <p><strong>Weaviate</strong> — An open-source vector database with AI-native search capabilities.</p>
+
+    <p><strong>ChromaDB</strong> — A lightweight and developer-friendly vector database, popular for learning and small projects.</p>
+
+    <p><strong>Hugging Face</strong> — A large AI ecosystem for models, datasets, embeddings, and open-source tools.</p>
+
+    <h2>Example: How a PDF Chatbot Works</h2>
+
+    <p>
+      A PDF chatbot is one of the simplest and most practical examples of RAG in action.
+    </p>
+
+    <ol>
+      <li>A PDF is uploaded into the system.</li>
+      <li>The text is extracted from the file.</li>
+      <li>The document is split into smaller chunks.</li>
+      <li>Each chunk is converted into embeddings.</li>
+      <li>The embeddings are stored for retrieval.</li>
+      <li>The user asks a question related to the PDF.</li>
+      <li>The retriever finds the most relevant chunk.</li>
+      <li>That chunk is inserted into the prompt.</li>
+      <li>The LLM generates the answer using the actual document content.</li>
+    </ol>
+
+    <h2>RAG Alternatives</h2>
+
+    <p>
+      RAG is not the only way AI systems access knowledge. Different approaches are used depending on the need for
+      accuracy, speed, cost, scalability, reasoning complexity, and real-time data access.
+    </p>
+
+    <p><strong>Prompt Engineering</strong> — Improves the input given to the model to get better results for specific tasks.</p>
+
+    <p><strong>Fine-Tuning</strong> — Trains an already-trained model on specialized data to improve performance in a particular domain.</p>
+
+    <p><strong>Pre-Training</strong> — Builds a model from scratch using a large and diverse dataset.</p>
+
+    <h2>Summary</h2>
+
+    <p>
+      RAG has become one of the most important architectures in modern AI engineering. It helps AI systems answer
+      with better accuracy, work with private knowledge, and stay updated without expensive retraining. As AI
+      applications continue to grow, RAG will remain a key part of building smarter, more reliable systems.
+    </p>
+
+  </div>
+
+  <!-- Article Footer -->
+  <footer class="article-footer">
+    <a href="./blogs.html" class="btn-outline">← Back to All Articles</a>
+  </footer>
+
+</article>
