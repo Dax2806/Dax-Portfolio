@@ -499,6 +499,17 @@ ul { list-style: none; }
   letter-spacing: 0.08em;
   margin-bottom: 0.4rem;
 }
+.exp-category {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--line);
+  display: inline-block;
+}
 .exp-role {
   font-family: var(--font-disp);
   font-size: 2rem;
