@@ -139,10 +139,17 @@
         <div class="screen-slider-container">
           <button class="slider-nav slider-prev" onclick="moveSlide(-1)">❮</button>
           <div class="screen-slides" id="sliderTrack">
-            <div class="screen-slide"><img src="./public/Soft-Cover.png" alt="Home Screen"></div>
-            <div class="screen-slide"><img src="./public/soft-splash.png" alt="Splash and Login Screen"></div>
-            <div class="screen-slide"><img src="./public/soft-services.png" alt="Services Screen"></div>
-            <div class="screen-slide"><img src="./public/soft-profile.png" alt="Profile and Bookings Screen"></div>
+            <div class="screen-slide"><img src="./public/Screen 1 - Splash Screen.jpg" alt="Splash Screen"></div>
+            <div class="screen-slide"><img src="./public/Screen 1A - Log in.jpg" alt="Log in"></div>
+            <div class="screen-slide"><img src="./public/Screen 1B - Sign up.jpg" alt="Sign up"></div>
+            <div class="screen-slide"><img src="./public/Screen 2 - Home Screen.jpg" alt="Home Screen"></div>
+            <div class="screen-slide"><img src="./public/Screen 3 - Services.jpg" alt="Services"></div>
+            <div class="screen-slide"><img src="./public/Screen 3A - Services.jpg" alt="Services Detail"></div>
+            <div class="screen-slide"><img src="./public/Screen 3B - Date & Time.jpg" alt="Date and Time"></div>
+            <div class="screen-slide"><img src="./public/Screen 3C - Review Booking.jpg" alt="Review Booking"></div>
+            <div class="screen-slide"><img src="./public/Screen 3D - Booking Confirmation.jpg" alt="Booking Confirmation"></div>
+            <div class="screen-slide"><img src="./public/Screen 4 - My Bookings.jpg" alt="My Bookings"></div>
+            <div class="screen-slide"><img src="./public/Screen 5 - Profile.jpg" alt="Profile"></div>
           </div>
           <button class="slider-nav slider-next" onclick="moveSlide(1)">❯</button>
         </div>
@@ -153,6 +160,13 @@
           <div class="dot" onclick="goToSlide(1)"></div>
           <div class="dot" onclick="goToSlide(2)"></div>
           <div class="dot" onclick="goToSlide(3)"></div>
+          <div class="dot" onclick="goToSlide(4)"></div>
+          <div class="dot" onclick="goToSlide(5)"></div>
+          <div class="dot" onclick="goToSlide(6)"></div>
+          <div class="dot" onclick="goToSlide(7)"></div>
+          <div class="dot" onclick="goToSlide(8)"></div>
+          <div class="dot" onclick="goToSlide(9)"></div>
+          <div class="dot" onclick="goToSlide(10)"></div>
         </div>
 
         <h2 style="margin-top: 4rem;">Designed Screens</h2>
@@ -196,7 +210,7 @@
     const track = document.getElementById('sliderTrack');
     const dots = document.querySelectorAll('.dot');
     let currentSlide = 0;
-    const totalSlides = 4;
+    const totalSlides = 11;
 
     function moveSlide(direction) {
       currentSlide += direction;
