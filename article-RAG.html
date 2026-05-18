@@ -1,18 +1,45 @@
-<article class="article-page">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Inner Workings of Browser - Rendering 101 by Daksh Patadia" />
+  <title>Understanding RAG: The Technology making AI smarter · Daksh Patadia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <header class="nav scrolled" id="nav">
+    <a href="./index.html" class="nav-logo">DP</a>
+    <button class="nav-burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="./blogs.html">← Back to Blogs</a>
+      <a href="./index.html#contact">Contact</a>
+      <a href="./public/Daksh-Patadia-Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article-page">
   
   <!-- Back Button -->
   <a href="./blogs.html" class="article-back mono">← All Articles</a>
 
   <!-- Article Header -->
   <header class="article-header">
-    <span class="article-tag mono">AI / Web Dev</span>
+    <span class="article-tag mono">AI Technology</span>
     <h1 class="article-title">Understanding RAG: The Technology Making AI Smarter</h1>
-    <p class="article-date mono">Published June 16, 2025</p>
+    <p class="article-date mono">Published May 18, 2026</p>
   </header>
 
   <!-- Cover Image -->
   <div class="article-cover">
-    <img src="./public/RAG.png" alt="Understanding RAG Article Cover" />
+    <img src="./public/rag-cover.jpg" alt="Understanding RAG Article Cover" />
   </div>
 
   <!-- Article Content -->
@@ -178,3 +205,24 @@
   </footer>
 
 </article>
+  </main>
+
+  <footer class="footer">
+    <span class="mono">© 2025 Daksh Patadia</span>
+    <span class="mono">Anand, Gujarat, India</span>
+  </footer>
+
+  <script>
+    const dot = document.getElementById('cursorDot');
+    document.addEventListener('mousemove', e => {
+      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
