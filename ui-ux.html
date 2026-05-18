@@ -40,7 +40,7 @@
         
         <!-- SOFT Cleaning Services -->
         <div class="design-card will-reveal">
-          <div class="design-image">
+          <div class="design-image clickable-image" onclick="openGallery('soft')">
             <img src="./public/soft-mockup.png" alt="SOFT Mobile App Interface">
             <div class="design-tags">
               <span class="d-tag">Mobile UI</span>
@@ -111,6 +111,17 @@
     <span class="mono">Anand, Gujarat, India</span>
   </footer>
 
+  <!-- Lightbox Gallery Modal -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" onclick="closeGallery()">×</button>
+    <div class="lightbox-content">
+      <button class="lightbox-nav lightbox-prev" onclick="changeSlide(-1)">❮</button>
+      <img id="lightbox-img" class="lightbox-image" src="" alt="Gallery Image">
+      <button class="lightbox-nav lightbox-next" onclick="changeSlide(1)">❯</button>
+    </div>
+    <div class="lightbox-counter" id="lightbox-counter">1 / 4</div>
+  </div>
+
   <script>
     const dot = document.getElementById('cursorDot');
     document.addEventListener('mousemove', e => {
@@ -135,6 +146,50 @@
       });
     }, { threshold: 0.08 });
     reveals.forEach(el => ro.observe(el));
+
+    // Gallery Logic
+    const galleries = {
+      soft: [
+        './public/soft-mockup.png',
+        './public/soft-splash.png',
+        './public/soft-services.png',
+        './public/soft-profile.png'
+      ]
+    };
+
+    let currentGallery = [];
+    let currentIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+
+    function openGallery(projectId) {
+      if (!galleries[projectId]) return;
+      currentGallery = galleries[projectId];
+      currentIndex = 0;
+      updateLightbox();
+      lightbox.classList.add('active');
+    }
+
+    function closeGallery() {
+      lightbox.classList.remove('active');
+    }
+
+    function changeSlide(direction) {
+      currentIndex += direction;
+      if (currentIndex >= currentGallery.length) currentIndex = 0;
+      if (currentIndex < 0) currentIndex = currentGallery.length - 1;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      lightboxImg.classList.remove('loaded');
+      setTimeout(() => {
+        lightboxImg.src = currentGallery[currentIndex];
+        lightboxCounter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
+        lightboxImg.onload = () => lightboxImg.classList.add('loaded');
+      }, 200);
+    }
   </script>
 </body>
 </html>
