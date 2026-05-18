@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SOFT - Home Cleaning Services App Design by Daksh Patadia" />
+  <title>SOFT App Design · Daksh Patadia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    /* Slider specific styles */
+    .screen-slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px; /* Mobile app mockup size */
+      margin: 3rem auto;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      border: 1px solid var(--line);
+      background: var(--bg-card);
+    }
+    
+    .screen-slides {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    
+    .screen-slide {
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .screen-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(20, 20, 20, 0.7);
+      color: #fff;
+      border: 1px solid var(--line-hi);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+    
+    .slider-nav:hover {
+      background: var(--accent);
+      color: #080808;
+      border-color: var(--accent);
+    }
+    
+    .slider-prev { left: 1rem; }
+    .slider-next { right: 1rem; }
+    
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--line-hi);
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .dot.active {
+      background: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <header class="nav scrolled" id="nav">
+    <a href="./index.html" class="nav-logo">DP</a>
+    <button class="nav-burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="./ui-ux.html">← Back to UI / UX</a>
+      <a href="./index.html#contact">Contact</a>
+      <a href="./public/Daksh-Patadia-Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article-page">
+      
+      <!-- Back Button -->
+      <a href="./ui-ux.html" class="article-back mono">← UI / UX Designs</a>
+
+      <!-- Project Header -->
+      <header class="article-header">
+        <span class="article-tag mono">Mobile UI / UX Design</span>
+        <h1 class="article-title">SOFT: Cleaning Services</h1>
+        <p class="article-date mono">Completed: June 13, 2026</p>
+      </header>
+
+      <!-- Main Cover -->
+      <div class="article-cover">
+         <img src="./public/Soft-Cover.png" alt="SOFT Mobile App Main Interface" style="border-radius: 8px; width: 100%; height: auto;" />
+      </div>
+
+      <!-- Project Summary & Content -->
+      <div class="article-content">
+        
+        <h2>Project Overview</h2>
+        <p><strong>SOFT</strong> is a mobile platform that connects users with trusted service providers, starting with home cleaning services. The primary goal is to make booking services fast, simple, and reliable — essentially allowing users to access services “at their fingertips.”</p>
+        <p>Over time, the platform is designed to scale and expand beyond cleaning into a broader range of home and potentially commercial services.</p>
+
+        <h2>Target Audience</h2>
+        <p>The primary users are busy homeowners and working professionals who value convenience, reliability, and trust. They are looking for quick, seamless booking without complexity.</p>
+
+        <h2>Interactive Screen Gallery</h2>
+        <p>Below is a slider featuring the high-fidelity mockups of the core application flow, including the Splash Screen, Service Categories, and User Profile & Bookings.</p>
+
+        <!-- Slider HTML -->
+        <div class="screen-slider-container">
+          <button class="slider-nav slider-prev" onclick="moveSlide(-1)">❮</button>
+          <div class="screen-slides" id="sliderTrack">
+            <div class="screen-slide"><img src="./public/Soft-Cover.png" alt="Home Screen"></div>
+            <div class="screen-slide"><img src="./public/soft-splash.png" alt="Splash and Login Screen"></div>
+            <div class="screen-slide"><img src="./public/soft-services.png" alt="Services Screen"></div>
+            <div class="screen-slide"><img src="./public/soft-profile.png" alt="Profile and Bookings Screen"></div>
+          </div>
+          <button class="slider-nav slider-next" onclick="moveSlide(1)">❯</button>
+        </div>
+        
+        <!-- Slider Dots -->
+        <div class="slider-dots" id="sliderDots">
+          <div class="dot active" onclick="goToSlide(0)"></div>
+          <div class="dot" onclick="goToSlide(1)"></div>
+          <div class="dot" onclick="goToSlide(2)"></div>
+          <div class="dot" onclick="goToSlide(3)"></div>
+        </div>
+
+        <h2 style="margin-top: 4rem;">Designed Screens</h2>
+        <ul>
+            <li><strong>Splash & Login Screen:</strong> Trust-evoking entry point with a clean blue-and-white aesthetic.</li>
+            <li><strong>Home Screen:</strong> Immediate access to quick bookings and featured services.</li>
+            <li><strong>Services (4 Screens):</strong> Detailed categories for Deep Clean, Standard Clean, Move In/Out, and custom requests.</li>
+            <li><strong>Bookings Screen:</strong> Seamlessly track upcoming and past service appointments.</li>
+            <li><strong>Profile Screen:</strong> Manage payment methods, addresses, and user preferences.</li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 4rem; justify-content: center;">
+          <a href="https://www.figma.com/design/NgoXPXzPdv64Q5YVKdowym/Soft---Cleaning-Services?node-id=0-1&p=f&t=U8hbU2PncZHhIJfb-0" target="_blank" rel="noopener noreferrer" class="btn-primary">View Figma File ↗</a>
+        </div>
+
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span class="mono">© 2026 Daksh Patadia</span>
+    <span class="mono">Anand, Gujarat, India</span>
+  </footer>
+
+  <script>
+    const dotEl = document.getElementById('cursorDot');
+    document.addEventListener('mousemove', e => {
+      dotEl.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+    
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+
+    // Slider Logic
+    const track = document.getElementById('sliderTrack');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    const totalSlides = 4;
+
+    function moveSlide(direction) {
+      currentSlide += direction;
+      if (currentSlide < 0) currentSlide = totalSlides - 1;
+      if (currentSlide >= totalSlides) currentSlide = 0;
+      updateSlider();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateSlider();
+    }
+
+    function updateSlider() {
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+  </script>
+</body>
+</html>
