@@ -10,83 +10,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
   <style>
-    /* Slider specific styles */
-    .screen-slider-container {
-      position: relative;
+    .screens-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .screen-item {
       width: 100%;
-      max-width: 280px; /* Mobile app mockup size */
-      margin: 3rem auto;
+      border-radius: 16px;
       overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
       border: 1px solid var(--line);
       background: var(--bg-card);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .screen-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
     }
     
-    .screen-slides {
-      display: flex;
-      transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
-    }
-    
-    .screen-slide {
-      min-width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .screen-slide img {
+    .screen-item img {
       width: 100%;
       height: auto;
       display: block;
-    }
-    
-    .slider-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(20, 20, 20, 0.7);
-      color: #fff;
-      border: 1px solid var(--line-hi);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      backdrop-filter: blur(4px);
-      z-index: 10;
-      transition: all 0.3s ease;
-    }
-    
-    .slider-nav:hover {
-      background: var(--accent);
-      color: #080808;
-      border-color: var(--accent);
-    }
-    
-    .slider-prev { left: 1rem; }
-    .slider-next { right: 1rem; }
-    
-    .slider-dots {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-top: 1.5rem;
-    }
-    
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--line-hi);
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    
-    .dot.active {
-      background: var(--accent);
     }
   </style>
 </head>
@@ -132,41 +81,21 @@
         <h2>Target Audience</h2>
         <p>The primary users are busy homeowners and working professionals who value convenience, reliability, and trust. They are looking for quick, seamless booking without complexity.</p>
 
-        <h2>Interactive Screen Gallery</h2>
-        <p>Below is a slider featuring the high-fidelity mockups of the core application flow, including the Splash Screen, Service Categories, and User Profile & Bookings.</p>
+        <h2>Full Screen Gallery</h2>
+        <p>Below is a comprehensive grid featuring the high-fidelity mockups of the core application flow, from onboarding to service management.</p>
 
-        <!-- Slider HTML -->
-        <div class="screen-slider-container">
-          <button class="slider-nav slider-prev" onclick="moveSlide(-1)">❮</button>
-          <div class="screen-slides" id="sliderTrack">
-            <div class="screen-slide"><img src="./public/Screen 1 - Splash Screen.jpg" alt="Splash Screen"></div>
-            <div class="screen-slide"><img src="./public/Screen 1A - Log in.jpg" alt="Log in"></div>
-            <div class="screen-slide"><img src="./public/Screen 1B - Sign up.jpg" alt="Sign up"></div>
-            <div class="screen-slide"><img src="./public/Screen 2 - Home Screen.jpg" alt="Home Screen"></div>
-            <div class="screen-slide"><img src="./public/Screen 3 - Services.jpg" alt="Services"></div>
-            <div class="screen-slide"><img src="./public/Screen 3A - Services.jpg" alt="Services Detail"></div>
-            <div class="screen-slide"><img src="./public/Screen 3B - Date & Time.jpg" alt="Date and Time"></div>
-            <div class="screen-slide"><img src="./public/Screen 3C - Review Booking.jpg" alt="Review Booking"></div>
-            <div class="screen-slide"><img src="./public/Screen 3D - Booking Confirmation.jpg" alt="Booking Confirmation"></div>
-            <div class="screen-slide"><img src="./public/Screen 4 - My Bookings.jpg" alt="My Bookings"></div>
-            <div class="screen-slide"><img src="./public/Screen 5 - Profile.jpg" alt="Profile"></div>
-          </div>
-          <button class="slider-nav slider-next" onclick="moveSlide(1)">❯</button>
-        </div>
-        
-        <!-- Slider Dots -->
-        <div class="slider-dots" id="sliderDots">
-          <div class="dot active" onclick="goToSlide(0)"></div>
-          <div class="dot" onclick="goToSlide(1)"></div>
-          <div class="dot" onclick="goToSlide(2)"></div>
-          <div class="dot" onclick="goToSlide(3)"></div>
-          <div class="dot" onclick="goToSlide(4)"></div>
-          <div class="dot" onclick="goToSlide(5)"></div>
-          <div class="dot" onclick="goToSlide(6)"></div>
-          <div class="dot" onclick="goToSlide(7)"></div>
-          <div class="dot" onclick="goToSlide(8)"></div>
-          <div class="dot" onclick="goToSlide(9)"></div>
-          <div class="dot" onclick="goToSlide(10)"></div>
+        <div class="screens-grid">
+          <div class="screen-item"><img src="./public/Screen 1 - Splash Screen.jpg" alt="Splash Screen" loading="lazy"></div>
+          <div class="screen-item"><img src="./public/Screen 1A - Log in.jpg" alt="Log in" loading="lazy"></div>
+          <div class="screen-item"><img src="./public/Screen 1B - Sign up.jpg" alt="Sign up" loading="lazy"></div>
+          <div class="screen-item"><img src="./public/Screen 2 - Home Screen.jpg" alt="Home Screen" loading="lazy"></div>
+          <div class="screen-item"><img src="./public/Screen 3 - Services.jpg" alt="Services" loading="lazy"></div>
+          <div class="screen-item"><img src="./public/Screen 3A - Services.jpg" alt="Services Detail" loading="lazy"></div>
+          <div class="screen-item"><img src="./public/Screen 3B - Date & Time.jpg" alt="Date and Time" loading="lazy"></div>
+          <div class="screen-item"><img src="./public/Screen 3C - Review Booking.jpg" alt="Review Booking" loading="lazy"></div>
+          <div class="screen-item"><img src="./public/Screen 3D - Booking Confirmation.jpg" alt="Booking Confirmation" loading="lazy"></div>
+          <div class="screen-item"><img src="./public/Screen 4 - My Bookings.jpg" alt="My Bookings" loading="lazy"></div>
+          <div class="screen-item"><img src="./public/Screen 5 - Profile.jpg" alt="Profile" loading="lazy"></div>
         </div>
 
         <h2 style="margin-top: 4rem;">Designed Screens</h2>
@@ -206,30 +135,7 @@
       burger.classList.toggle('open');
     });
 
-    // Slider Logic
-    const track = document.getElementById('sliderTrack');
-    const dots = document.querySelectorAll('.dot');
-    let currentSlide = 0;
-    const totalSlides = 11;
-
-    function moveSlide(direction) {
-      currentSlide += direction;
-      if (currentSlide < 0) currentSlide = totalSlides - 1;
-      if (currentSlide >= totalSlides) currentSlide = 0;
-      updateSlider();
-    }
-
-    function goToSlide(index) {
-      currentSlide = index;
-      updateSlider();
-    }
-
-    function updateSlider() {
-      track.style.transform = `translateX(-${currentSlide * 100}%)`;
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-      });
-    }
+    // No JS needed for grid layout
   </script>
 </body>
 </html>
