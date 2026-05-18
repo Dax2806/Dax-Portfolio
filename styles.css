@@ -1463,8 +1463,8 @@ ul { list-style: none; }
 .lightbox-content {
   position: relative;
   width: 90%;
-  max-width: 1200px;
-  height: 80vh;
+  max-width: 1000px;
+  height: 65vh;
   display: flex;
   justify-content: center;
   align-items: center;
