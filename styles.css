@@ -369,29 +369,49 @@ ul { list-style: none; }
 }
 
 /* ──────────────────────────────────
-   MARQUEE
+   TOOLS SHOWCASE
 ────────────────────────────────── */
-.marquee-strip {
+.tools-showcase {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  overflow: hidden;
-  padding: 0.9rem 0;
   background: var(--bg-card);
-}
-.marquee-track {
+  padding: 3rem 2.5rem;
   display: flex;
-  gap: 1.8rem;
-  width: max-content;
-  animation: marquee 28s linear infinite;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-soft);
-  letter-spacing: 0.1em;
+  justify-content: center;
+  align-items: center;
 }
-.marquee-track .sep { color: var(--accent); }
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+
+.tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.tool-logo {
+  height: 42px;
+  width: auto;
+  opacity: 0.4;
+  filter: grayscale(100%);
+  transition: opacity 0.4s var(--ease), filter 0.4s var(--ease), transform 0.4s var(--ease);
+  cursor: pointer;
+}
+
+.tool-logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.15) translateY(-4px);
+}
+
+.tool-logo-invert {
+  filter: grayscale(100%) invert(1);
+}
+
+.tool-logo-invert:hover {
+  filter: grayscale(0%) invert(1);
 }
 
 /* ──────────────────────────────────
