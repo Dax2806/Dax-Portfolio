@@ -732,6 +732,31 @@ ul { list-style: none; }
   background: var(--bg-card2);
 }
 
+.achieve-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.achieve-card-header .achieve-tag {
+  margin-bottom: 0;
+}
+
+.achieve-badge {
+  height: 38px;
+  width: auto;
+  opacity: 0.6;
+  filter: grayscale(100%);
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+.achieve-card:hover .achieve-badge {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
 .achieve-tag {
   display: inline-block;
   font-family: var(--font-mono);
