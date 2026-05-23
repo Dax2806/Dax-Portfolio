@@ -369,6 +369,52 @@ ul { list-style: none; }
 }
 
 /* ──────────────────────────────────
+   QUICK CONTACT
+────────────────────────────────── */
+.quick-contact {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  z-index: 100;
+}
+
+.qc-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.qc-links a {
+  color: var(--text-soft);
+  transition: color 0.3s var(--ease), transform 0.3s var(--ease);
+  display: grid;
+  place-items: center;
+}
+
+.qc-links a:hover {
+  color: var(--accent);
+  transform: translateX(-6px) scale(1.1);
+}
+
+.qc-line {
+  width: 1px;
+  height: 90px;
+  background-color: var(--text-soft);
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .quick-contact {
+    display: none;
+  }
+}
+
+/* ──────────────────────────────────
    TOOLS SHOWCASE
 ────────────────────────────────── */
 .tools-showcase {
