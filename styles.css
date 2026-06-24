@@ -421,7 +421,7 @@ ul { list-style: none; }
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: var(--bg-card);
-  padding: 3rem 2.5rem;
+  padding: 1.5rem 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -430,7 +430,7 @@ ul { list-style: none; }
 .tools-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 1.5rem;
   justify-content: center;
   align-items: center;
   max-width: var(--max);
