@@ -420,7 +420,7 @@ ul { list-style: none; }
 .tools-showcase {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: var(--bg-card);
+  background: #111827;
   padding: 1.5rem 2.5rem;
   display: flex;
   justify-content: center;
